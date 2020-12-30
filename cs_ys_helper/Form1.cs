@@ -29,6 +29,10 @@ namespace cs_ys_helper
         {
             this.Text = app_name + " ver " + app_version;
             this.Icon = cs_ys_helper.Properties.Resources.main_icon;
+            Win32Utility.SetCueText(textBox_cookie, "请输入cookie！");
+            Win32Utility.SetCueText(textBox_abyss_uid, "请输入游戏uid！");
+            Win32Utility.SetCueText(textBox_userinfo_uid, "请输入游戏uid！");
+
         }
 
 
@@ -238,7 +242,10 @@ namespace cs_ys_helper
                             lvi_li.Checked = true;
                             lvi_li.SubItems[1].Font = new Font(Control.DefaultFont, FontStyle.Bold);
                             lvi_li.SubItems[1].BackColor = Color.AliceBlue;
+                            lvi_li.Tag = true;
                         }
+                        else
+                            lvi_li.Tag = false;
                         listView_life.Items.Add(lvi_li);
                     }
 
@@ -288,12 +295,105 @@ namespace cs_ys_helper
                 info = info + "开始时间\t" + Utils.ts2Date(data["start_time"].ToString()) + "\n";
                 info = info + "开始时间\t" + Utils.ts2Date(data["end_time"].ToString()) + "\n";
                 richTextBox_abyss_info.Text = info;
+
+
+                //每项的top
+                listView_rank.Items.Clear();
+                ListViewItem[] lvi = new ListViewItem[5];
+
+                lvi[0] = new ListViewItem("最多击破数");
+                lvi[0].SubItems.Add(data["defeat_rank"][0]["value"].ToString());
+                lvi[0].SubItems.Add(Utils.code2name(data["defeat_rank"][0]["avatar_id"].ToString()));
+                lvi[0].Tag = data["defeat_rank"][0]["rarity"].ToString();
+
+                lvi[1] = new ListViewItem("最强一击");
+                lvi[1].SubItems.Add(data["damage_rank"][0]["value"].ToString());
+                lvi[1].SubItems.Add(Utils.code2name(data["damage_rank"][0]["avatar_id"].ToString()));
+                lvi[1].Tag = data["damage_rank"][0]["rarity"].ToString();
+
+                lvi[2] = new ListViewItem("承受最多伤害");
+                lvi[2].SubItems.Add(data["take_damage_rank"][0]["value"].ToString());
+                lvi[2].SubItems.Add(Utils.code2name(data["take_damage_rank"][0]["avatar_id"].ToString()));
+                lvi[2].Tag = data["take_damage_rank"][0]["rarity"].ToString();
+
+                lvi[3] = new ListViewItem("元素爆发次数");
+                lvi[3].SubItems.Add(data["defeat_rank"][0]["value"].ToString());
+                lvi[3].SubItems.Add(Utils.code2name(data["normal_skill_rank"][0]["avatar_id"].ToString()));
+                lvi[3].Tag = data["normal_skill_rank"][0]["rarity"].ToString();
+
+                lvi[4] = new ListViewItem("元素战技次数");
+                lvi[4].SubItems.Add(data["energy_skill_rank"][0]["value"].ToString());
+                lvi[4].SubItems.Add(Utils.code2name(data["energy_skill_rank"][0]["avatar_id"].ToString()));
+                lvi[4].Tag = data["energy_skill_rank"][0]["rarity"].ToString();
+
+
+
+                for (int i = 0; i < lvi.Length; i++)
+                {
+                    lvi[i].UseItemStyleForSubItems = false;
+                    lvi[i].SubItems[2].BackColor = Utils.getRarityColor(lvi[i].Tag.ToString());
+                    listView_rank.Items.Add(lvi[i]);
+                }
+
+
+                //填写深渊细节
+                listView_abyss_details.Items.Clear();
+                foreach(JsonData floor in data["floors"])
+                {
+                    Console.WriteLine(floor["index"].ToString()+"层开始");
+                    string floor_idx = floor["index"].ToString();
+                    string star_floor = floor["star"].ToString() + "/" + floor["max_star"].ToString();
+
+                    ListViewItem lvi_1 = new ListViewItem(floor_idx);
+                    lvi_1.SubItems.Add(star_floor);
+                    listView_abyss_details.Items.Add(lvi_1);
+
+                    foreach (JsonData level in floor["levels"])
+                    {
+                        string lev_idx = floor_idx + "-" + level["index"].ToString();
+                        string lev_start = level["star"].ToString() + "/" + level["max_star"].ToString();
+
+
+                        ListViewItem lvi_2= new ListViewItem(new string[] {"","" ,lev_idx, lev_start, "","" });
+
+                        listView_abyss_details.Items.Add(lvi_2);
+
+                        foreach (JsonData battle in level["battles"])
+                        {
+                            string battle_idx = battle["index"].ToString();
+                            string date = Utils.ts2Date(battle["timestamp"].ToString());
+                            JsonData role = battle["avatars"];
+                            string role0 = "";
+                            string role1 = "";
+                            string role2 = "";
+                            string role3 = "";
+
+
+                            if (role.Count > 0) role0 = Utils.code2name(role[0]["id"].ToString()) + "|" + role[0]["level"].ToString();
+                            if (role.Count > 1) role1 = Utils.code2name(role[1]["id"].ToString()) + "|" + role[1]["level"].ToString();
+                            if (role.Count > 2) role2 = Utils.code2name(role[2]["id"].ToString()) + "|" + role[2]["level"].ToString();
+                            if (role.Count > 3) role3 = Utils.code2name(role[3]["id"].ToString()) + "|" + role[3]["level"].ToString();
+                            ListViewItem lvi_3 = new ListViewItem(new string[] { "", "", "", "", battle_idx, role0, role1, role2, role3, date });
+                            listView_abyss_details.Items.Add(lvi_3);
+
+                        }
+                    }
+
+                }
+
                 toolStripStatusLabel1.Text = "[" + DateTime.Now.ToString() + "] 查询深渊信息OK！";
             }
             else
             {
                 toolStripStatusLabel1.Text = "[" + DateTime.Now.ToString() + "] " + abyssInfo["message"].ToString();
             }
+        }
+
+        //不让修改命座,如果发生改变，以tag里的值为准
+        private void listView_life_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+            ListViewItem lvi = e.Item;
+            lvi.Checked = (bool)(lvi.Tag);
         }
     }
 }
