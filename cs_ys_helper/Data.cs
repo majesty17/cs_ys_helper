@@ -34,8 +34,8 @@ namespace cs_ys_helper
         };
 
         //这里写你的cookie，例如：account_id=xxxxx; cookie_token=xxxxxxxxxxxxxxxxxxxx，
-        //或者从textbox里输入
-        public static string COOKIE = "";
+        //这里废弃了，从textbox里用户输入
+
 
 
     }

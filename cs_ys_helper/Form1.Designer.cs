@@ -84,6 +84,17 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.textBox_cookie = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.richTextBox_abyss_info = new System.Windows.Forms.RichTextBox();
+            this.button_searchabyss = new System.Windows.Forms.Button();
+            this.textBox_abyss_uid = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabControl1.SuspendLayout();
@@ -93,6 +104,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_roledetails)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,8 +113,9 @@
             this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(2, 3);
             this.tabControl1.Name = "tabControl1";
@@ -137,7 +150,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1081, 589);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "圣遗物副属性评分";
+            this.tabPage1.Text = "圣遗物副属性评分(ing)";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // label_sywscore4
@@ -503,7 +516,7 @@
             this.richTextBox_usercity.Location = new System.Drawing.Point(308, 272);
             this.richTextBox_usercity.Name = "richTextBox_usercity";
             this.richTextBox_usercity.ReadOnly = true;
-            this.richTextBox_usercity.Size = new System.Drawing.Size(199, 149);
+            this.richTextBox_usercity.Size = new System.Drawing.Size(199, 247);
             this.richTextBox_usercity.TabIndex = 8;
             this.richTextBox_usercity.Text = "";
             // 
@@ -600,15 +613,16 @@
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(1081, 589);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "配置";
+            this.tabPage3.Text = "配置cookie";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // textBox_cookie
             // 
             this.textBox_cookie.Location = new System.Drawing.Point(78, 16);
             this.textBox_cookie.Name = "textBox_cookie";
-            this.textBox_cookie.Size = new System.Drawing.Size(343, 25);
+            this.textBox_cookie.Size = new System.Drawing.Size(724, 25);
             this.textBox_cookie.TabIndex = 1;
+            this.textBox_cookie.Text = "account_id=xxxxxx; cookie_token=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
             // 
             // label6
             // 
@@ -618,6 +632,103 @@
             this.label6.Size = new System.Drawing.Size(55, 15);
             this.label6.TabIndex = 0;
             this.label6.Text = "Cookie";
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.listView1);
+            this.tabPage4.Controls.Add(this.richTextBox_abyss_info);
+            this.tabPage4.Controls.Add(this.button_searchabyss);
+            this.tabPage4.Controls.Add(this.textBox_abyss_uid);
+            this.tabPage4.Controls.Add(this.label7);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(1081, 589);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "深渊信息查询(ing)";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // listView1
+            // 
+            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader13,
+            this.columnHeader14,
+            this.columnHeader15,
+            this.columnHeader21,
+            this.columnHeader22});
+            this.listView1.FullRowSelect = true;
+            this.listView1.GridLines = true;
+            this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(242, 40);
+            this.listView1.MultiSelect = false;
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(322, 536);
+            this.listView1.TabIndex = 9;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "角色";
+            this.columnHeader13.Width = 70;
+            // 
+            // columnHeader14
+            // 
+            this.columnHeader14.Text = "属性";
+            // 
+            // columnHeader15
+            // 
+            this.columnHeader15.Text = "好感度";
+            // 
+            // columnHeader21
+            // 
+            this.columnHeader21.Text = "等级";
+            this.columnHeader21.Width = 50;
+            // 
+            // columnHeader22
+            // 
+            this.columnHeader22.Text = "星级";
+            this.columnHeader22.Width = 50;
+            // 
+            // richTextBox_abyss_info
+            // 
+            this.richTextBox_abyss_info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.richTextBox_abyss_info.Location = new System.Drawing.Point(9, 40);
+            this.richTextBox_abyss_info.Name = "richTextBox_abyss_info";
+            this.richTextBox_abyss_info.ReadOnly = true;
+            this.richTextBox_abyss_info.Size = new System.Drawing.Size(227, 140);
+            this.richTextBox_abyss_info.TabIndex = 8;
+            this.richTextBox_abyss_info.Text = "";
+            // 
+            // button_searchabyss
+            // 
+            this.button_searchabyss.Location = new System.Drawing.Point(171, 5);
+            this.button_searchabyss.Name = "button_searchabyss";
+            this.button_searchabyss.Size = new System.Drawing.Size(87, 29);
+            this.button_searchabyss.TabIndex = 6;
+            this.button_searchabyss.Text = "查询";
+            this.button_searchabyss.UseVisualStyleBackColor = true;
+            this.button_searchabyss.Click += new System.EventHandler(this.button_searchabyss_Click);
+            // 
+            // textBox_abyss_uid
+            // 
+            this.textBox_abyss_uid.Location = new System.Drawing.Point(65, 9);
+            this.textBox_abyss_uid.Name = "textBox_abyss_uid";
+            this.textBox_abyss_uid.Size = new System.Drawing.Size(100, 25);
+            this.textBox_abyss_uid.TabIndex = 5;
+            this.textBox_abyss_uid.Text = "101879667";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 12);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(53, 15);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "游戏id";
             // 
             // statusStrip1
             // 
@@ -658,6 +769,8 @@
             this.groupBox1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -725,6 +838,17 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TextBox textBox_cookie;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Button button_searchabyss;
+        private System.Windows.Forms.TextBox textBox_abyss_uid;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.RichTextBox richTextBox_abyss_info;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader columnHeader13;
+        private System.Windows.Forms.ColumnHeader columnHeader14;
+        private System.Windows.Forms.ColumnHeader columnHeader15;
+        private System.Windows.Forms.ColumnHeader columnHeader21;
+        private System.Windows.Forms.ColumnHeader columnHeader22;
     }
 }
 

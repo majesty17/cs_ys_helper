@@ -59,8 +59,54 @@ namespace cs_ys_helper
             return JsonMapper.ToObject(content);
         }
 
+        //
+        //获取深渊
+        public static JsonData getUserAbyss(string uid, string cookie)
+        {
+
+
+            //JsonData jd = JsonMapper.ToObject(content);
+
+            string url = "https://api-takumi.mihoyo.com/game_record/genshin/api/spiralAbyss?server=" + getServer(uid) + "&role_id=" + uid + "&schedule_type=1";
+            // + getServer(uid) + "&role_id=" + uid;
+
+            Console.WriteLine(url);
+
+
+            HttpWebRequest myRequest = (HttpWebRequest)WebRequest.Create(url);
+
+            myRequest.Headers.Add("cookie", cookie);// Data.COOKIE);
+            myRequest.Headers.Add("DS", getDS());
+            myRequest.Headers.Add("Origin", "https://webstatic.mihoyo.com");
+            myRequest.Headers.Add("x-rpc-app_version", Data.VERSION);
+            myRequest.Headers.Add("x-rpc-client_type", "4");
+            //myRequest.Headers.Add("Accept-Encoding", "gzip, deflate");
+            //myRequest.Headers.Add("Accept-Language", "zh-CN,en-US;q=0.8");
+            myRequest.Headers.Add("X-Requested-With", "com.mihoyo.hyperion");
+
+            myRequest.UserAgent = "Mozilla/5.0 (Linux; Android 9; Unspecified Device) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/39.0.0.0 Mobile Safari/537.36 miHoYoBBS/2.2.0";
+            myRequest.Referer = "https://webstatic.mihoyo.com/app/community-game-records/index.html?v=6";
+            myRequest.Accept = "application/json, text/plain, */*";
+
+
+            myRequest.Method = "GET";
+
+            HttpWebResponse myResponse = (HttpWebResponse)myRequest.GetResponse();
+
+            StreamReader reader = new StreamReader(myResponse.GetResponseStream(), Encoding.UTF8);
+
+            string content = reader.ReadToEnd();
+
+            reader.Close();
+
+            Console.WriteLine(content);
+
+            return JsonMapper.ToObject(content);
+        }
+
+
         //获取详细角色信息
-        public static JsonData getRoleDetails(string uid,string[] character_ids)
+        public static JsonData getRoleDetails(string uid,string[] character_ids,string cookie)
         {
             string url = "https://api-takumi.mihoyo.com/game_record/genshin/api/character";
             string server = getServer(uid);
@@ -77,7 +123,7 @@ namespace cs_ys_helper
 
             HttpWebRequest myRequest = (HttpWebRequest)WebRequest.Create(url);
 
-            myRequest.Headers.Add("cookie", Data.COOKIE);
+            myRequest.Headers.Add("cookie", cookie);
             myRequest.Headers.Add("DS", getDS());
             myRequest.Headers.Add("Origin", "https://webstatic.mihoyo.com");
             myRequest.Headers.Add("x-rpc-app_version", Data.VERSION);
@@ -99,17 +145,16 @@ namespace cs_ys_helper
             reqStream.Close();
 
             HttpWebResponse myResponse = (HttpWebResponse)myRequest.GetResponse();
-
             StreamReader reader = new StreamReader(myResponse.GetResponseStream(), Encoding.UTF8);
-
             string ret = reader.ReadToEnd();
-
             reader.Close();
-
             Console.WriteLine(ret);
-
             return JsonMapper.ToObject(ret);
         }
+
+
+
+
 
         //属性英文名到中文名
         public static string getElement(string eng)
@@ -209,6 +254,15 @@ namespace cs_ys_helper
                 s += str.Substring(r.Next(0, str.Length - 1), 1);
             }
             return s;
+        }
+        //时间戳转日期
+        public static string ts2Date(string ts)
+        {
+            long delta = Convert.ToInt64(ts);
+            System.DateTime startTime = TimeZone.CurrentTimeZone.ToLocalTime(new System.DateTime(1970, 1, 1)); // 当地时区
+            return startTime.AddSeconds(delta).ToString("yyyy-MM-dd ");
+
+
         }
     }
 }
