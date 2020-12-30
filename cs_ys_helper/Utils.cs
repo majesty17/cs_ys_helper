@@ -281,8 +281,13 @@ namespace cs_ys_helper
             long delta = Convert.ToInt64(ts);
             System.DateTime startTime = TimeZone.CurrentTimeZone.ToLocalTime(new System.DateTime(1970, 1, 1)); // 当地时区
             return startTime.AddSeconds(delta).ToString("yyyy-MM-dd ");
-
-
+        }
+        //时间戳转日期-长
+        public static string ts2Datetime(string ts)
+        {
+            long delta = Convert.ToInt64(ts);
+            System.DateTime startTime = TimeZone.CurrentTimeZone.ToLocalTime(new System.DateTime(1970, 1, 1)); // 当地时区
+            return startTime.AddSeconds(delta).ToString("yyyy-MM-dd HH:mm:ss");
         }
     }
 }

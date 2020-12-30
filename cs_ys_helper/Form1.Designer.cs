@@ -863,7 +863,7 @@
             // columnHeader31
             // 
             this.columnHeader31.Text = "时间";
-            this.columnHeader31.Width = 80;
+            this.columnHeader31.Width = 160;
             // 
             // Form1
             // 

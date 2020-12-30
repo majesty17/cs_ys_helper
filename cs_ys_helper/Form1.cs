@@ -361,19 +361,28 @@ namespace cs_ys_helper
                         foreach (JsonData battle in level["battles"])
                         {
                             string battle_idx = battle["index"].ToString();
-                            string date = Utils.ts2Date(battle["timestamp"].ToString());
+                            string date = Utils.ts2Datetime(battle["timestamp"].ToString());
                             JsonData role = battle["avatars"];
-                            string role0 = "";
-                            string role1 = "";
-                            string role2 = "";
-                            string role3 = "";
 
+                            ListViewItem lvi_3 = new ListViewItem(new string[] { "", "", "", "", battle_idx });
+                            lvi_3.UseItemStyleForSubItems = false;
+                            string[] roles = new string[] { "", "", "", "" };
+                            for(int i = 0; i < 4; i++)
+                            {
+                                if (i >= role.Count)
+                                {
+                                    lvi_3.SubItems.Add("----");
+                                }
+                                else
+                                {
+                                    roles[i] = Utils.code2name(role[i]["id"].ToString()) + "|" + role[i]["level"].ToString();
+                                    lvi_3.SubItems.Add(roles[i]);
+                                    lvi_3.SubItems[i + 5].BackColor = Utils.getRarityColor(role[i]["rarity"].ToString());
+                                }
+                            }
 
-                            if (role.Count > 0) role0 = Utils.code2name(role[0]["id"].ToString()) + "|" + role[0]["level"].ToString();
-                            if (role.Count > 1) role1 = Utils.code2name(role[1]["id"].ToString()) + "|" + role[1]["level"].ToString();
-                            if (role.Count > 2) role2 = Utils.code2name(role[2]["id"].ToString()) + "|" + role[2]["level"].ToString();
-                            if (role.Count > 3) role3 = Utils.code2name(role[3]["id"].ToString()) + "|" + role[3]["level"].ToString();
-                            ListViewItem lvi_3 = new ListViewItem(new string[] { "", "", "", "", battle_idx, role0, role1, role2, role3, date });
+                            lvi_3.SubItems.Add(date);
+
                             listView_abyss_details.Items.Add(lvi_3);
 
                         }
