@@ -20,6 +20,8 @@ namespace cs_ys_helper
         int star_3 = 0;
         int star_4 = 0;
         int star_5 = 0;
+        int bao5_ct = 0;
+        int bao4_ct = 0;
         /// <summary>
         /// {"name":"凝光","type":"角色","rarity":5,"count":10}
         /// </summary>
@@ -42,6 +44,8 @@ namespace cs_ys_helper
 
             no_5_ct = 0;
             no_4_ct = 0;
+            bao4_ct = 0;
+            bao5_ct = 0;
             bag = new JsonData();
             rand = new Random(DateTime.Now.Millisecond);
             
@@ -51,46 +55,103 @@ namespace cs_ys_helper
         //随机一个:约定区间左闭右开
         private JsonData random()
         {
-            double r = rand.NextDouble();
-            int rarity = 3;
-            if (r < Data.rate_4) rarity = 4;
-            if (r < Data.rate_5) rarity = 5;
+            int rarity;
 
-            //如果中5，则重置90中5保底和10中4保底
-            if (rarity == 5)
+            if (no_5_ct >= 89) //保5，同时重置
             {
+                no_4_ct = 0;
                 no_5_ct = 0;
-                no_4_ct = 0;
-            }
-            //如果中4，则重置10中4保底
-            if (rarity == 4) no_4_ct = 0;
-
-
-            //10发保底:
-            if (no_4_ct >= 10 - 1)
-            {
-                rarity = 4;
-                no_4_ct = 0;
-            }
-            else
-            {
-                no_4_ct++;
-            }
-
-
-            //90发大保底，如果连续89次都没有5，则第90发必定5
-            if (no_5_ct >= 90 - 1)
-            {
                 rarity = 5;
-                no_5_ct = 0;
-                no_4_ct = 0;
+                bao5_ct++;
             }
-            else
+            else if (no_4_ct >= 9) //仅小保底，从45里随机
             {
-                no_5_ct++;
+                double r = rand.NextDouble();
+                if (r < Data.rate_5) //不是5，就是4
+                {
+                    no_4_ct = 0;
+                    no_5_ct = 0;
+                    rarity = 5;
+                }
+                else
+                {
+                    no_4_ct = 0;
+                    rarity = 4;
+                    no_5_ct++;
+                }
+                bao4_ct++;
             }
-            //可以看到，当大小保底赶在一起，则取大保底；
+            else //没有任何保底，纯概率
+            {
+                double r = rand.NextDouble();
+                if (r < Data.rate_5)
+                {
+                    no_4_ct = 0;
+                    no_5_ct = 0;
+                    rarity = 5;
+                }
+                else if (r >= Data.rate_5 && r < Data.rate_5 + Data.rate_4)
+                {
+                    no_4_ct = 0;
+                    rarity = 4;
+                    no_5_ct++;
+                }
+                else
+                {
+                    rarity = 3;
+                    no_5_ct++;
+                    no_4_ct++;
+                }
+            }
 
+
+
+            /*
+
+double r = rand.NextDouble();
+int rarity = 3;
+if (r < Data.rate_4 + Data.rate_5) rarity = 4; //1划分成三个区间
+if (r < Data.rate_5) rarity = 5;
+
+//如果中5，则重置90中5保底和10中4保底
+if (rarity == 5)
+{
+    no_5_ct = 0;
+    no_4_ct = 0;
+}
+//如果中4，则重置10中4保底
+if (rarity == 4)
+{
+    no_4_ct = 0;
+    no_5_ct++;
+}
+
+
+//10发保底:
+if (no_4_ct >= 10 - 1)
+{
+    rarity = 4;
+    no_4_ct = 0;
+}
+else
+{
+    no_4_ct++;
+}
+
+
+//90发大保底，如果连续89次都没有5，则第90发必定5
+if (no_5_ct >= 90 - 1)
+{
+    rarity = 5;
+    no_5_ct = 0;
+    no_4_ct = 0;
+}
+else
+{
+    no_5_ct++;
+}
+//可以看到，当大小保底赶在一起，则取大保底；
+*/
 
             string[] pool = Data.wish_pool[rarity - 3];
             int len = pool.Length;
@@ -132,7 +193,7 @@ namespace cs_ys_helper
                         if (rarity == 4) xinghui_5 += 2;
                         if (rarity == 3) xingchen_4 += 15;
                     }
-                    else //人物的话，小于7，加数字，大于7加星辉、星辰
+                    else //人物的话，小于7，加数字，大于等于7加星辉、星辰
                     {
                         if (count < 7)
                         {
@@ -202,6 +263,8 @@ namespace cs_ys_helper
             star_5 = 0;
             no_5_ct = 0;
             no_4_ct = 0;
+            bao5_ct = 0;
+            bao4_ct = 0;
             bag = JsonMapper.ToObject("[]");
         }
         //生成总结
@@ -215,8 +278,10 @@ namespace cs_ys_helper
             ret = ret + string.Format("十连数:        {0:G}\n", times_10);
             ret = ret + string.Format("花费估计:      {0:G} RMB\n", (times * 16));
                                                      
-            ret = ret + string.Format("5星数|率:      {0:G}|{1:P}\n", star_5, (float)star_5 / (float)times );
-            ret = ret + string.Format("4星数|率:      {0:G}|{1:P}\n", star_4, (float)star_4 / (float)times );
+            ret = ret + string.Format("5星数(率):     {0:G}({1:P})\n", star_5, (float)star_5 / (float)times );
+            ret = ret + string.Format("4星数(率):     {0:G}({1:P})\n", star_4, (float)star_4 / (float)times );
+            ret = ret + string.Format("保底4星数:     {0:G}\n", bao4_ct);
+            ret = ret + string.Format("保底5星数:     {0:G}\n", bao5_ct);
             ret = ret + string.Format("连续没4星:     {0:G}\n", no_4_ct);
             ret = ret + string.Format("连续没5星:     {0:G}\n", no_5_ct);
             ret = ret + "注:综合4星率:13%,综合5星率:1.6%\n";

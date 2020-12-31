@@ -103,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
+    <Content Include="保底算法py代码.py" />
     <None Include="Resources\favicon.ico" />
     <None Include="Resources\main_icon.ico" />
   </ItemGroup>
