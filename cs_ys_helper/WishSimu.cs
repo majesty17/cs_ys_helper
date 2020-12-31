@@ -26,7 +26,7 @@ namespace cs_ys_helper
         public JsonData bag;
 
         int no_5_ct;
-
+        int no_4_ct;
         Random rand;
 
         public WishSimu()
@@ -41,34 +41,56 @@ namespace cs_ys_helper
             star_5 = 0;
 
             no_5_ct = 0;
+            no_4_ct = 0;
             bag = new JsonData();
             rand = new Random(DateTime.Now.Millisecond);
             
 
         }
 
-        //随机一个
+        //随机一个:约定区间左闭右开
         private JsonData random()
         {
             double r = rand.NextDouble();
             int rarity = 3;
-            if (r < 0.051d) rarity = 4;
-            if (r < 0.004d) rarity = 5;
+            if (r < Data.rate_4) rarity = 4;
+            if (r < Data.rate_5) rarity = 5;
 
-            //如果已经中了，则重置90发保底
+            //如果中5，则重置90中5保底和10中4保底
             if (rarity == 5)
+            {
                 no_5_ct = 0;
+                no_4_ct = 0;
+            }
+            //如果中4，则重置10中4保底
+            if (rarity == 4) no_4_ct = 0;
 
-            //90发大保底，第90发必定5星
+
+            //10发保底:
+            if (no_4_ct >= 10 - 1)
+            {
+                rarity = 4;
+                no_4_ct = 0;
+            }
+            else
+            {
+                no_4_ct++;
+            }
+
+
+            //90发大保底，如果连续89次都没有5，则第90发必定5
             if (no_5_ct >= 90 - 1)
             {
                 rarity = 5;
                 no_5_ct = 0;
+                no_4_ct = 0;
             }
             else
             {
                 no_5_ct++;
             }
+            //可以看到，当大小保底赶在一起，则取大保底；
+
 
             string[] pool = Data.wish_pool[rarity - 3];
             int len = pool.Length;
@@ -80,38 +102,6 @@ namespace cs_ys_helper
             return JsonMapper.ToObject(j_str);
         }
 
-        //随机一个(10连里面的保底)
-        private JsonData random10()
-        {
-            double r = rand.NextDouble();
-            //如果落在3星区，就重来；
-            while (r > 0.051d)
-            {
-                r = rand.NextDouble();
-            }
-            int rarity = 4;
-            if (r < 0.004d) rarity = 5;
-
-            //90发大保底，
-            if (no_5_ct >= 90)
-            {
-                rarity = 5;
-                no_5_ct = 0;
-            }
-            else
-            {
-                no_5_ct++;
-            }
-
-            string[] pool = Data.wish_pool[rarity - 3];
-            int len = pool.Length;
-            int pos = rand.Next() % len;
-            string name = pool[pos].Split(new char[] { '_' })[0];
-            string type = pool[pos].Split(new char[] { '_' })[1];
-
-            string j_str = "{\"name\":\"" + name + "\",\"type\":\"" + type + "\",\"rarity\":" + rarity + ",\"count\":1}";
-            return JsonMapper.ToObject(j_str);
-        }
 
 
 
@@ -184,35 +174,17 @@ namespace cs_ys_helper
             addToBag(ret);
             return ret;
         }
-        //10连
+        //10连,这里不再考虑保底，由random统一考虑
         public JsonData[] wish10()
         {
             times += 10;
             times_10 += 1;
-            int count_3 = 0;
+
             JsonData[] wishes = new JsonData[10];
-
-            //前9次搞出来，统计下出的三星的次数
-            for (int i = 0; i < 9; i++)
-            {
-                wishes[i] = random();
-                if (wishes[i]["rarity"].ToString() == "3")
-                    count_3++;
-            }
-
-            //前9次都是3星的话，第10个给4、5；否则纯随机
-            if (count_3 == 9)
-            {
-                wishes[9] = random10();
-            }
-            else
-            {
-                wishes[9] = random();
-            }
-            
 
             for (int i = 0; i < 10; i++)
             {
+                wishes[i] = random();
                 addToBag(wishes[i]);
             }
 
@@ -229,6 +201,7 @@ namespace cs_ys_helper
             star_4 = 0;
             star_5 = 0;
             no_5_ct = 0;
+            no_4_ct = 0;
             bag = JsonMapper.ToObject("[]");
         }
         //生成总结
@@ -244,6 +217,7 @@ namespace cs_ys_helper
                                                      
             ret = ret + string.Format("5星数|率:      {0:G}|{1:P}\n", star_5, (float)star_5 / (float)times );
             ret = ret + string.Format("4星数|率:      {0:G}|{1:P}\n", star_4, (float)star_4 / (float)times );
+            ret = ret + string.Format("连续没4星:     {0:G}\n", no_4_ct);
             ret = ret + string.Format("连续没5星:     {0:G}\n", no_5_ct);
             ret = ret + "注:综合4星率:13%,综合5星率:1.6%\n";
             ret = ret + string.Format("星辉数:        {0:G}\n", xinghui_5);

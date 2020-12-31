@@ -33,6 +33,8 @@ namespace cs_ys_helper
             {5.4f,6.2f,7.0f,7.8f,39f }
         };
 
+        public static double rate_5 = 0.006d;
+        public static double rate_4 = 0.051d;
 
         //角色池
         /// <summary>
