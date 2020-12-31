@@ -60,6 +60,26 @@
             this.button_userinfo = new System.Windows.Forms.Button();
             this.textBox_userinfo_uid = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.listView_abyss_details = new System.Windows.Forms.ListView();
+            this.columnHeader26 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader29 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader28 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader25 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader27 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader30 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader31 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listView_rank = new System.Windows.Forms.ListView();
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.richTextBox_abyss_info = new System.Windows.Forms.RichTextBox();
+            this.button_searchabyss = new System.Windows.Forms.Button();
+            this.textBox_abyss_uid = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label_sywscore4 = new System.Windows.Forms.Label();
             this.label_sywscore3 = new System.Windows.Forms.Label();
@@ -81,40 +101,35 @@
             this.textBox_sywscore1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox_sywscore1 = new System.Windows.Forms.ComboBox();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.listView_rank = new System.Windows.Forms.ListView();
-            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.richTextBox_abyss_info = new System.Windows.Forms.RichTextBox();
-            this.button_searchabyss = new System.Windows.Forms.Button();
-            this.textBox_abyss_uid = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.textBox_cookie = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.listView_abyss_details = new System.Windows.Forms.ListView();
-            this.columnHeader26 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader27 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader28 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader29 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader30 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader25 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader31 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.comboBox_wish_type = new System.Windows.Forms.ComboBox();
+            this.button_wish1 = new System.Windows.Forms.Button();
+            this.button_wish10 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.button_wish_reset = new System.Windows.Forms.Button();
+            this.listView_wishbag = new System.Windows.Forms.ListView();
+            this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader32 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader33 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader34 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.richTextBox_wish_stat = new System.Windows.Forms.RichTextBox();
+            this.button_wish100 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_roledetails)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            this.tabPage6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -124,7 +139,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(3, 2);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -427,6 +444,177 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "游戏id";
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.listView_abyss_details);
+            this.tabPage4.Controls.Add(this.listView_rank);
+            this.tabPage4.Controls.Add(this.richTextBox_abyss_info);
+            this.tabPage4.Controls.Add(this.button_searchabyss);
+            this.tabPage4.Controls.Add(this.textBox_abyss_uid);
+            this.tabPage4.Controls.Add(this.label7);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(1189, 661);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "深渊信息查询";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // listView_abyss_details
+            // 
+            this.listView_abyss_details.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.listView_abyss_details.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listView_abyss_details.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader26,
+            this.columnHeader29,
+            this.columnHeader28,
+            this.columnHeader25,
+            this.columnHeader27,
+            this.columnHeader30,
+            this.columnHeader22,
+            this.columnHeader23,
+            this.columnHeader24,
+            this.columnHeader31});
+            this.listView_abyss_details.FullRowSelect = true;
+            this.listView_abyss_details.GridLines = true;
+            this.listView_abyss_details.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listView_abyss_details.HideSelection = false;
+            this.listView_abyss_details.Location = new System.Drawing.Point(333, 40);
+            this.listView_abyss_details.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listView_abyss_details.MultiSelect = false;
+            this.listView_abyss_details.Name = "listView_abyss_details";
+            this.listView_abyss_details.Size = new System.Drawing.Size(845, 605);
+            this.listView_abyss_details.TabIndex = 10;
+            this.listView_abyss_details.UseCompatibleStateImageBehavior = false;
+            this.listView_abyss_details.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader26
+            // 
+            this.columnHeader26.Text = "层数";
+            this.columnHeader26.Width = 40;
+            // 
+            // columnHeader29
+            // 
+            this.columnHeader29.Text = "星(层)";
+            this.columnHeader29.Width = 52;
+            // 
+            // columnHeader28
+            // 
+            this.columnHeader28.Text = "房间";
+            this.columnHeader28.Width = 42;
+            // 
+            // columnHeader25
+            // 
+            this.columnHeader25.Text = "星(间)";
+            this.columnHeader25.Width = 52;
+            // 
+            // columnHeader27
+            // 
+            this.columnHeader27.Text = "上|下";
+            this.columnHeader27.Width = 47;
+            // 
+            // columnHeader30
+            // 
+            this.columnHeader30.Text = "角色1";
+            this.columnHeader30.Width = 75;
+            // 
+            // columnHeader22
+            // 
+            this.columnHeader22.Text = "角色2";
+            this.columnHeader22.Width = 75;
+            // 
+            // columnHeader23
+            // 
+            this.columnHeader23.Text = "角色3";
+            this.columnHeader23.Width = 75;
+            // 
+            // columnHeader24
+            // 
+            this.columnHeader24.Text = "角色4";
+            this.columnHeader24.Width = 75;
+            // 
+            // columnHeader31
+            // 
+            this.columnHeader31.Text = "时间";
+            this.columnHeader31.Width = 160;
+            // 
+            // listView_rank
+            // 
+            this.listView_rank.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.listView_rank.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listView_rank.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader13,
+            this.columnHeader14,
+            this.columnHeader15});
+            this.listView_rank.FullRowSelect = true;
+            this.listView_rank.GridLines = true;
+            this.listView_rank.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listView_rank.HideSelection = false;
+            this.listView_rank.Location = new System.Drawing.Point(9, 203);
+            this.listView_rank.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listView_rank.MultiSelect = false;
+            this.listView_rank.Name = "listView_rank";
+            this.listView_rank.Size = new System.Drawing.Size(318, 442);
+            this.listView_rank.TabIndex = 9;
+            this.listView_rank.UseCompatibleStateImageBehavior = false;
+            this.listView_rank.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "项目";
+            this.columnHeader13.Width = 85;
+            // 
+            // columnHeader14
+            // 
+            this.columnHeader14.Text = "数值";
+            // 
+            // columnHeader15
+            // 
+            this.columnHeader15.Text = "角色";
+            this.columnHeader15.Width = 65;
+            // 
+            // richTextBox_abyss_info
+            // 
+            this.richTextBox_abyss_info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.richTextBox_abyss_info.Location = new System.Drawing.Point(9, 40);
+            this.richTextBox_abyss_info.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.richTextBox_abyss_info.Name = "richTextBox_abyss_info";
+            this.richTextBox_abyss_info.ReadOnly = true;
+            this.richTextBox_abyss_info.Size = new System.Drawing.Size(318, 148);
+            this.richTextBox_abyss_info.TabIndex = 8;
+            this.richTextBox_abyss_info.Text = "";
+            // 
+            // button_searchabyss
+            // 
+            this.button_searchabyss.Location = new System.Drawing.Point(171, 5);
+            this.button_searchabyss.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button_searchabyss.Name = "button_searchabyss";
+            this.button_searchabyss.Size = new System.Drawing.Size(87, 29);
+            this.button_searchabyss.TabIndex = 6;
+            this.button_searchabyss.Text = "查询";
+            this.button_searchabyss.UseVisualStyleBackColor = true;
+            this.button_searchabyss.Click += new System.EventHandler(this.button_searchabyss_Click);
+            // 
+            // textBox_abyss_uid
+            // 
+            this.textBox_abyss_uid.Location = new System.Drawing.Point(65, 9);
+            this.textBox_abyss_uid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_abyss_uid.Name = "textBox_abyss_uid";
+            this.textBox_abyss_uid.Size = new System.Drawing.Size(100, 25);
+            this.textBox_abyss_uid.TabIndex = 5;
+            this.textBox_abyss_uid.Text = "101879667";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(5, 12);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(53, 15);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "游戏id";
+            // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.label_sywscore4);
@@ -646,98 +834,6 @@
             this.comboBox_sywscore1.TabIndex = 0;
             this.comboBox_sywscore1.TextChanged += new System.EventHandler(this.updateSywScore);
             // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.listView_abyss_details);
-            this.tabPage4.Controls.Add(this.listView_rank);
-            this.tabPage4.Controls.Add(this.richTextBox_abyss_info);
-            this.tabPage4.Controls.Add(this.button_searchabyss);
-            this.tabPage4.Controls.Add(this.textBox_abyss_uid);
-            this.tabPage4.Controls.Add(this.label7);
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1189, 661);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "深渊信息查询";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // listView_rank
-            // 
-            this.listView_rank.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.listView_rank.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listView_rank.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader13,
-            this.columnHeader14,
-            this.columnHeader15});
-            this.listView_rank.FullRowSelect = true;
-            this.listView_rank.GridLines = true;
-            this.listView_rank.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listView_rank.HideSelection = false;
-            this.listView_rank.Location = new System.Drawing.Point(9, 203);
-            this.listView_rank.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.listView_rank.MultiSelect = false;
-            this.listView_rank.Name = "listView_rank";
-            this.listView_rank.Size = new System.Drawing.Size(318, 442);
-            this.listView_rank.TabIndex = 9;
-            this.listView_rank.UseCompatibleStateImageBehavior = false;
-            this.listView_rank.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader13
-            // 
-            this.columnHeader13.Text = "项目";
-            this.columnHeader13.Width = 85;
-            // 
-            // columnHeader14
-            // 
-            this.columnHeader14.Text = "数值";
-            // 
-            // columnHeader15
-            // 
-            this.columnHeader15.Text = "角色";
-            this.columnHeader15.Width = 65;
-            // 
-            // richTextBox_abyss_info
-            // 
-            this.richTextBox_abyss_info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox_abyss_info.Location = new System.Drawing.Point(9, 40);
-            this.richTextBox_abyss_info.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.richTextBox_abyss_info.Name = "richTextBox_abyss_info";
-            this.richTextBox_abyss_info.ReadOnly = true;
-            this.richTextBox_abyss_info.Size = new System.Drawing.Size(318, 148);
-            this.richTextBox_abyss_info.TabIndex = 8;
-            this.richTextBox_abyss_info.Text = "";
-            // 
-            // button_searchabyss
-            // 
-            this.button_searchabyss.Location = new System.Drawing.Point(171, 5);
-            this.button_searchabyss.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button_searchabyss.Name = "button_searchabyss";
-            this.button_searchabyss.Size = new System.Drawing.Size(87, 29);
-            this.button_searchabyss.TabIndex = 6;
-            this.button_searchabyss.Text = "查询";
-            this.button_searchabyss.UseVisualStyleBackColor = true;
-            this.button_searchabyss.Click += new System.EventHandler(this.button_searchabyss_Click);
-            // 
-            // textBox_abyss_uid
-            // 
-            this.textBox_abyss_uid.Location = new System.Drawing.Point(65, 9);
-            this.textBox_abyss_uid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox_abyss_uid.Name = "textBox_abyss_uid";
-            this.textBox_abyss_uid.Size = new System.Drawing.Size(100, 25);
-            this.textBox_abyss_uid.TabIndex = 5;
-            this.textBox_abyss_uid.Text = "101879667";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(5, 12);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 15);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "游戏id";
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.textBox_cookie);
@@ -786,84 +882,146 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(167, 20);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
-            // listView_abyss_details
+            // tabPage5
             // 
-            this.listView_abyss_details.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tabPage5.Location = new System.Drawing.Point(4, 25);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(1189, 661);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "消耗计算器(ing)";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.button_wish100);
+            this.tabPage6.Controls.Add(this.richTextBox_wish_stat);
+            this.tabPage6.Controls.Add(this.listView_wishbag);
+            this.tabPage6.Controls.Add(this.button_wish_reset);
+            this.tabPage6.Controls.Add(this.label8);
+            this.tabPage6.Controls.Add(this.button_wish10);
+            this.tabPage6.Controls.Add(this.button_wish1);
+            this.tabPage6.Controls.Add(this.comboBox_wish_type);
+            this.tabPage6.Location = new System.Drawing.Point(4, 25);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(1189, 661);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "抽卡模拟器";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // comboBox_wish_type
+            // 
+            this.comboBox_wish_type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_wish_type.FormattingEnabled = true;
+            this.comboBox_wish_type.Items.AddRange(new object[] {
+            "角色活动祈愿",
+            "武器活动祈愿",
+            "常驻祈愿"});
+            this.comboBox_wish_type.Location = new System.Drawing.Point(109, 20);
+            this.comboBox_wish_type.Name = "comboBox_wish_type";
+            this.comboBox_wish_type.Size = new System.Drawing.Size(178, 23);
+            this.comboBox_wish_type.TabIndex = 0;
+            // 
+            // button_wish1
+            // 
+            this.button_wish1.Location = new System.Drawing.Point(24, 68);
+            this.button_wish1.Name = "button_wish1";
+            this.button_wish1.Size = new System.Drawing.Size(86, 30);
+            this.button_wish1.TabIndex = 1;
+            this.button_wish1.Text = "1发";
+            this.button_wish1.UseVisualStyleBackColor = true;
+            this.button_wish1.Click += new System.EventHandler(this.button_wish1_Click);
+            // 
+            // button_wish10
+            // 
+            this.button_wish10.Location = new System.Drawing.Point(116, 68);
+            this.button_wish10.Name = "button_wish10";
+            this.button_wish10.Size = new System.Drawing.Size(86, 30);
+            this.button_wish10.TabIndex = 2;
+            this.button_wish10.Text = "10发";
+            this.button_wish10.UseVisualStyleBackColor = true;
+            this.button_wish10.Click += new System.EventHandler(this.button_wish10_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(21, 23);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(67, 15);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "祈愿类型";
+            // 
+            // button_wish_reset
+            // 
+            this.button_wish_reset.Location = new System.Drawing.Point(381, 23);
+            this.button_wish_reset.Name = "button_wish_reset";
+            this.button_wish_reset.Size = new System.Drawing.Size(82, 78);
+            this.button_wish_reset.TabIndex = 4;
+            this.button_wish_reset.Text = "重置";
+            this.button_wish_reset.UseVisualStyleBackColor = true;
+            this.button_wish_reset.Click += new System.EventHandler(this.button_wish_reset_Click);
+            // 
+            // listView_wishbag
+            // 
+            this.listView_wishbag.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.listView_abyss_details.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listView_abyss_details.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader26,
-            this.columnHeader29,
-            this.columnHeader28,
-            this.columnHeader25,
-            this.columnHeader27,
-            this.columnHeader30,
-            this.columnHeader22,
-            this.columnHeader23,
-            this.columnHeader24,
-            this.columnHeader31});
-            this.listView_abyss_details.FullRowSelect = true;
-            this.listView_abyss_details.GridLines = true;
-            this.listView_abyss_details.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listView_abyss_details.HideSelection = false;
-            this.listView_abyss_details.Location = new System.Drawing.Point(333, 40);
-            this.listView_abyss_details.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.listView_abyss_details.MultiSelect = false;
-            this.listView_abyss_details.Name = "listView_abyss_details";
-            this.listView_abyss_details.Size = new System.Drawing.Size(845, 605);
-            this.listView_abyss_details.TabIndex = 10;
-            this.listView_abyss_details.UseCompatibleStateImageBehavior = false;
-            this.listView_abyss_details.View = System.Windows.Forms.View.Details;
+            this.listView_wishbag.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listView_wishbag.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader32,
+            this.columnHeader21,
+            this.columnHeader33,
+            this.columnHeader34});
+            this.listView_wishbag.FullRowSelect = true;
+            this.listView_wishbag.GridLines = true;
+            this.listView_wishbag.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listView_wishbag.HideSelection = false;
+            this.listView_wishbag.Location = new System.Drawing.Point(819, 15);
+            this.listView_wishbag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listView_wishbag.MultiSelect = false;
+            this.listView_wishbag.Name = "listView_wishbag";
+            this.listView_wishbag.Size = new System.Drawing.Size(359, 628);
+            this.listView_wishbag.TabIndex = 10;
+            this.listView_wishbag.UseCompatibleStateImageBehavior = false;
+            this.listView_wishbag.View = System.Windows.Forms.View.Details;
             // 
-            // columnHeader26
+            // columnHeader21
             // 
-            this.columnHeader26.Text = "层数";
-            this.columnHeader26.Width = 40;
+            this.columnHeader21.Text = "类型";
+            this.columnHeader21.Width = 45;
             // 
-            // columnHeader27
+            // columnHeader32
             // 
-            this.columnHeader27.Text = "上|下";
-            this.columnHeader27.Width = 47;
+            this.columnHeader32.Text = "名称";
+            this.columnHeader32.Width = 80;
             // 
-            // columnHeader28
+            // columnHeader33
             // 
-            this.columnHeader28.Text = "房间";
-            this.columnHeader28.Width = 42;
+            this.columnHeader33.Text = "星级";
+            this.columnHeader33.Width = 65;
             // 
-            // columnHeader29
+            // columnHeader34
             // 
-            this.columnHeader29.Text = "星(层)";
-            this.columnHeader29.Width = 52;
+            this.columnHeader34.Text = "数量";
             // 
-            // columnHeader30
+            // richTextBox_wish_stat
             // 
-            this.columnHeader30.Text = "角色1";
-            this.columnHeader30.Width = 75;
+            this.richTextBox_wish_stat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.richTextBox_wish_stat.Location = new System.Drawing.Point(522, 15);
+            this.richTextBox_wish_stat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.richTextBox_wish_stat.Name = "richTextBox_wish_stat";
+            this.richTextBox_wish_stat.ReadOnly = true;
+            this.richTextBox_wish_stat.Size = new System.Drawing.Size(291, 622);
+            this.richTextBox_wish_stat.TabIndex = 11;
+            this.richTextBox_wish_stat.Text = "";
             // 
-            // columnHeader22
+            // button_wish100
             // 
-            this.columnHeader22.Text = "角色2";
-            this.columnHeader22.Width = 75;
-            // 
-            // columnHeader23
-            // 
-            this.columnHeader23.Text = "角色3";
-            this.columnHeader23.Width = 75;
-            // 
-            // columnHeader24
-            // 
-            this.columnHeader24.Text = "角色4";
-            this.columnHeader24.Width = 75;
-            // 
-            // columnHeader25
-            // 
-            this.columnHeader25.Text = "星(间)";
-            this.columnHeader25.Width = 52;
-            // 
-            // columnHeader31
-            // 
-            this.columnHeader31.Text = "时间";
-            this.columnHeader31.Width = 160;
+            this.button_wish100.Location = new System.Drawing.Point(208, 68);
+            this.button_wish100.Name = "button_wish100";
+            this.button_wish100.Size = new System.Drawing.Size(86, 30);
+            this.button_wish100.TabIndex = 12;
+            this.button_wish100.Text = "100发";
+            this.button_wish100.UseVisualStyleBackColor = true;
+            this.button_wish100.Click += new System.EventHandler(this.button_wish100_Click);
             // 
             // Form1
             // 
@@ -884,14 +1042,16 @@
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_roledetails)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -977,6 +1137,20 @@
         private System.Windows.Forms.ColumnHeader columnHeader23;
         private System.Windows.Forms.ColumnHeader columnHeader24;
         private System.Windows.Forms.ColumnHeader columnHeader31;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.ComboBox comboBox_wish_type;
+        private System.Windows.Forms.Button button_wish1;
+        private System.Windows.Forms.Button button_wish10;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button button_wish_reset;
+        private System.Windows.Forms.ListView listView_wishbag;
+        private System.Windows.Forms.ColumnHeader columnHeader21;
+        private System.Windows.Forms.ColumnHeader columnHeader32;
+        private System.Windows.Forms.ColumnHeader columnHeader33;
+        private System.Windows.Forms.ColumnHeader columnHeader34;
+        private System.Windows.Forms.RichTextBox richTextBox_wish_stat;
+        private System.Windows.Forms.Button button_wish100;
     }
 }
 

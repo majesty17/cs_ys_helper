@@ -17,6 +17,8 @@ namespace cs_ys_helper
         string app_version = "0.1";
 
 
+        WishSimu wishGame;
+
         public Form1()
         {
             InitializeComponent();
@@ -32,7 +34,10 @@ namespace cs_ys_helper
             Win32Utility.SetCueText(textBox_cookie, "请输入cookie！");
             Win32Utility.SetCueText(textBox_abyss_uid, "请输入游戏uid！");
             Win32Utility.SetCueText(textBox_userinfo_uid, "请输入游戏uid！");
+            comboBox_wish_type.SelectedIndex = 2;
 
+            wishGame = new WishSimu();
+            wishGame.resetGame();
         }
 
 
@@ -404,5 +409,72 @@ namespace cs_ys_helper
             ListViewItem lvi = e.Item;
             lvi.Checked = (bool)(lvi.Tag);
         }
+
+
+
+
+
+        /// <summary>
+        /// 模拟抽卡
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+
+        //单抽
+        private void button_wish1_Click(object sender, EventArgs e)
+        {
+            wishGame.wish1();
+            sync_wish_data();
+        }
+        //10
+        private void button_wish10_Click(object sender, EventArgs e)
+        {
+            wishGame.wish10();
+            sync_wish_data();
+        }
+        //100
+        private void button_wish100_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 10; i++)
+                wishGame.wish10();
+            sync_wish_data();
+        }
+        //清空背包，重置状态
+        private void button_wish_reset_Click(object sender, EventArgs e)
+        {
+            wishGame.resetGame();
+            sync_wish_data();
+        }
+
+
+
+        //信息同步到背包、状态
+        private void sync_wish_data()
+        {
+            //根据历史抽的情况，写状态信息；
+            string stat = wishGame.makeSummary();
+            richTextBox_wish_stat.Text = stat;
+
+            //根据背包内容，同步到背包listview；
+            listView_wishbag.Items.Clear();
+            foreach(JsonData item in wishGame.bag)
+            {
+                ListViewItem lvi = new ListViewItem(item["name"].ToString());
+                if (item["type"].ToString() == "角色")
+                    lvi.SubItems.Add("☺");
+                else
+                    lvi.SubItems.Add("➳");
+                lvi.SubItems.Add(item["rarity"].ToString());
+                lvi.SubItems.Add(item["count"].ToString());
+                lvi.UseItemStyleForSubItems = false;
+
+                lvi.SubItems[2].BackColor = Utils.getRarityColor((item["rarity"].ToString()));
+
+                listView_wishbag.Items.Add(lvi);
+            }
+        }
+
+
     }
 }
