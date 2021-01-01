@@ -56,6 +56,14 @@ namespace cs_ys_helper
         private JsonData random()
         {
             int rarity;
+            //概率修正，参考：https://www.bilibili.com/video/BV16i4y1L7Ne
+            double rate_5_adjust = no_5_ct >= 72 ? ((1.0 - Data.rate_5) / (89 - 72) *
+                (no_5_ct - 72) + Data.rate_5) : Data.rate_5;
+
+            double rate_4_adjust = no_4_ct >= 6 ? ((1.0 - Data.rate_4) / (9 - 6) *
+                (no_4_ct - 6) + Data.rate_4) : Data.rate_4;
+
+
 
             if (no_5_ct >= 89) //保5，同时重置
             {
@@ -67,7 +75,7 @@ namespace cs_ys_helper
             else if (no_4_ct >= 9) //仅小保底，从45里随机
             {
                 double r = rand.NextDouble();
-                if (r < Data.rate_5) //不是5，就是4
+                if (r < rate_5_adjust) //不是5，就是4
                 {
                     no_4_ct = 0;
                     no_5_ct = 0;
@@ -84,13 +92,13 @@ namespace cs_ys_helper
             else //没有任何保底，纯概率
             {
                 double r = rand.NextDouble();
-                if (r < Data.rate_5)
+                if (r < rate_5_adjust)
                 {
                     no_4_ct = 0;
                     no_5_ct = 0;
                     rarity = 5;
                 }
-                else if (r >= Data.rate_5 && r < Data.rate_5 + Data.rate_4)
+                else if (r >= rate_5_adjust && r < rate_5_adjust + rate_4_adjust)
                 {
                     no_4_ct = 0;
                     rarity = 4;
@@ -278,8 +286,8 @@ else
             ret = ret + string.Format("十连数:        {0:G}\n", times_10);
             ret = ret + string.Format("花费估计:      {0:G} RMB\n", (times * 16));
                                                      
-            ret = ret + string.Format("5星数(率):     {0:G}({1:P})\n", star_5, (float)star_5 / (float)times );
-            ret = ret + string.Format("4星数(率):     {0:G}({1:P})\n", star_4, (float)star_4 / (float)times );
+            ret = ret + string.Format("5星数(率):     {0:G}({1:P4})\n", star_5, (float)star_5 / (float)times );
+            ret = ret + string.Format("4星数(率):     {0:G}({1:P4})\n", star_4, (float)star_4 / (float)times );
             ret = ret + string.Format("保底4星数:     {0:G}\n", bao4_ct);
             ret = ret + string.Format("保底5星数:     {0:G}\n", bao5_ct);
             ret = ret + string.Format("连续没4星:     {0:G}\n", no_4_ct);

@@ -15,7 +15,7 @@ namespace cs_ys_helper
     {
         string app_name = "Genshin Impact Helper";
         string app_version = "0.1";
-
+        string cookie;
 
         WishSimu wishGame;
 
@@ -35,10 +35,16 @@ namespace cs_ys_helper
             Win32Utility.SetCueText(textBox_abyss_uid, "请输入游戏uid！");
             Win32Utility.SetCueText(textBox_userinfo_uid, "请输入游戏uid！");
             comboBox_wish_type.SelectedIndex = 2;
-
+            //u初始化抽卡对象
             wishGame = new WishSimu();
             wishGame.resetGame();
+
+            //尝试读取cookie
+            cookie = Utils.loadCookie();
+            textBox_cookie.Text = cookie;
         }
+
+
 
 
 
@@ -124,7 +130,6 @@ namespace cs_ys_helper
                 return;
             }
             listView_rolelist.Tag = uid;
-            String cookie = textBox_cookie.Text.Trim();
             JsonData userinfo = Utils.getUserInfo(uid,cookie);
             //JsonData abyssInfo = Utils.getUserAbyss(uid, cookie);
             if (userinfo["message"].ToString() == "OK")
@@ -199,7 +204,6 @@ namespace cs_ys_helper
             {
                 ListViewItem lvi_old = listView_rolelist.SelectedItems[0];
                 Console.WriteLine(lvi_old.Tag.ToString());
-                String cookie = textBox_cookie.Text.Trim();
                 JsonData role_details = Utils.getRoleDetails(uid, new string[] { lvi_old.Tag.ToString() }, cookie);
                 if (role_details["message"].ToString() == "OK")
                 {
@@ -287,7 +291,6 @@ namespace cs_ys_helper
                 return;
             }
             //listView_rolelist.Tag = uid;
-            String cookie = textBox_cookie.Text.Trim();
             JsonData abyssInfo = Utils.getUserAbyss(uid, cookie);
             if (abyssInfo["message"].ToString() == "OK")
             {
@@ -458,13 +461,30 @@ namespace cs_ys_helper
 
             //根据背包内容，同步到背包listview；
             listView_wishbag.Items.Clear();
-            foreach(JsonData item in wishGame.bag)
+            //先弄角色
+            listView_wishbag.Items.Add(new ListViewItem("角色"));
+            foreach (JsonData item in wishGame.bag)
+            {
+                ListViewItem lvi = new ListViewItem(item["name"].ToString());
+                if (item["type"].ToString() == "武器")
+                    continue;
+                lvi.SubItems.Add("☺");
+                lvi.SubItems.Add(item["rarity"].ToString());
+                lvi.SubItems.Add(item["count"].ToString());
+                lvi.UseItemStyleForSubItems = false;
+
+                lvi.SubItems[2].BackColor = Utils.getRarityColor((item["rarity"].ToString()));
+
+                listView_wishbag.Items.Add(lvi);
+            }
+            //再弄武器
+            listView_wishbag.Items.Add(new ListViewItem("武器"));
+            foreach (JsonData item in wishGame.bag)
             {
                 ListViewItem lvi = new ListViewItem(item["name"].ToString());
                 if (item["type"].ToString() == "角色")
-                    lvi.SubItems.Add("☺");
-                else
-                    lvi.SubItems.Add("➳");
+                    continue;
+                lvi.SubItems.Add("➳");
                 lvi.SubItems.Add(item["rarity"].ToString());
                 lvi.SubItems.Add(item["count"].ToString());
                 lvi.UseItemStyleForSubItems = false;
@@ -476,5 +496,13 @@ namespace cs_ys_helper
         }
 
 
+
+
+        //内容变化的时候自动更新cookie
+        private void textBox_cookie_TextChanged(object sender, EventArgs e)
+        {
+            cookie = textBox_cookie.Text.Trim();
+            Utils.saveCookie(cookie);
+        }
     }
 }

@@ -60,6 +60,6 @@ namespace cs_ys_helper
         //这里废弃了，从textbox里用户输入
 
 
-
+        public static string cookieFile = ".cookie";
     }
 }

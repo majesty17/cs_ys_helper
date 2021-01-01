@@ -289,5 +289,34 @@ namespace cs_ys_helper
             System.DateTime startTime = TimeZone.CurrentTimeZone.ToLocalTime(new System.DateTime(1970, 1, 1)); // 当地时区
             return startTime.AddSeconds(delta).ToString("yyyy-MM-dd HH:mm:ss");
         }
+
+        //尝试从本地文件读取cookie
+        public static string loadCookie()
+        {
+            string path = System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase + "/" + Data.cookieFile;
+            try
+            {
+                return File.ReadAllText(path);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("find no cookie file!");
+                return "";
+            }
+        }
+
+        //保存用户输入的cookie
+        public static void saveCookie(string cookie)
+        {
+            string path = System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase + "/" + Data.cookieFile;
+            try
+            {
+                File.WriteAllText(path, cookie);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("写入cookie失败！");
+            }
+        }
     }
 }
