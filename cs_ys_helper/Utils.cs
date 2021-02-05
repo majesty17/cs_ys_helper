@@ -8,6 +8,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using LitJson;
+using System.Web;
 
 
 namespace cs_ys_helper
@@ -198,9 +199,9 @@ namespace cs_ys_helper
 
 
         //角色code转换为name
-        public static string code2name(string code)
+        public static string code2name(string code) //感觉跟这个有点像了：https://webstatic.mihoyo.com/hk4e/gacha_info/cn_gf01/items/zh-cn.json
         {
-            string code2name_j = "{\"10000030\": \"钟离\",\"10000035\": \"七七\",\"10000003\": \"琴\",\"10000005\": \"旅行者\",\"10000006\": \"丽莎\",\"10000007\": " +
+            string code2name_j = "{\"10000030\": \"钟离\",\"10000035\": \"七七\",\"10000037\": \"甘雨\",\"10000038\": \"阿贝多\",\"10000003\": \"琴\",\"10000005\": \"旅行者\",\"10000006\": \"丽莎\",\"10000007\": " +
             "\"旅行者\",\"10000014\": \"芭芭拉\",\"10000015\": \"凯亚\",\"10000016\": \"迪卢克\",\"10000020\": \"雷泽\",\"10000021\": " +
             "\"安柏\",\"10000022\": \"温迪\",\"10000023\": \"香菱\",\"10000024\": \"北斗\",\"10000025\": \"行秋\",\"10000027\": \"凝光\"," +
             "\"10000029\": \"可莉\",\"10000031\": \"菲谢尔\",\"10000032\": \"班尼特\",\"10000033\": \"达达利亚\",\"10000034\": \"诺艾尔\"," +
@@ -317,6 +318,78 @@ namespace cs_ys_helper
             {
                 Console.WriteLine("写入cookie失败！");
             }
+        }
+
+        
+        public static JsonData getWishType(string auth_key)
+        {
+
+            //JsonData jd = JsonMapper.ToObject(content);
+
+            string url = "https://hk4e-api.mihoyo.com/event/gacha_info/api/getConfigList?authkey_ver=1&authkey=" + auth_key+ "&lang=zh-cn";
+            // + getServer(uid) + "&role_id=" + uid;
+
+            Console.WriteLine(url);
+
+
+            HttpWebRequest myRequest = (HttpWebRequest)WebRequest.Create(url);
+
+
+            myRequest.UserAgent = "Mozilla/5.0 (Linux; Android 9; Unspecified Device) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/39.0.0.0 Mobile Safari/537.36 miHoYoBBS/2.2.0";
+            myRequest.Referer = "https://webstatic.mihoyo.com/app/community-game-records/index.html?v=6";
+            myRequest.Accept = "application/json, text/plain, */*";
+
+
+            myRequest.Method = "GET";
+
+            HttpWebResponse myResponse = (HttpWebResponse)myRequest.GetResponse();
+
+            StreamReader reader = new StreamReader(myResponse.GetResponseStream(), Encoding.UTF8);
+
+            string content = reader.ReadToEnd();
+
+            reader.Close();
+
+            Console.WriteLine(content);
+
+            return JsonMapper.ToObject(content);
+        }
+
+        //获取抽卡历史
+        public static JsonData getWishHis(string type,string auth_key,int page)
+        {
+            //JsonData jd = JsonMapper.ToObject(content);
+
+            string url = "https://hk4e-api.mihoyo.com/event/gacha_info/api/getGachaLog?authkey_ver=1&authkey=" +  HttpUtility.UrlEncode(auth_key) +
+                "&page=" + (page) + "&gacha_type=" + type +
+                "&lang=zh-cn&size=20";
+            // + getServer(uid) + "&role_id=" + uid;
+
+            Console.WriteLine(url);
+
+
+            HttpWebRequest myRequest = (HttpWebRequest)WebRequest.Create(url);
+
+
+            myRequest.UserAgent = "Mozilla/5.0 (Linux; Android 9; Unspecified Device) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/39.0.0.0 Mobile Safari/537.36 miHoYoBBS/2.2.0";
+            myRequest.Referer = "https://webstatic.mihoyo.com/app/community-game-records/index.html?v=6";
+            myRequest.Accept = "application/json, text/plain, */*";
+
+
+            myRequest.Method = "GET";
+
+            HttpWebResponse myResponse = (HttpWebResponse)myRequest.GetResponse();
+
+            StreamReader reader = new StreamReader(myResponse.GetResponseStream(), Encoding.UTF8);
+
+            string content = reader.ReadToEnd();
+
+            reader.Close();
+
+            Console.WriteLine(content);
+
+            return JsonMapper.ToObject(content);
+            return "";
         }
     }
 }

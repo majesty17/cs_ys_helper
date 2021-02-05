@@ -18,12 +18,15 @@ namespace cs_ys_helper
         string cookie;
 
         WishSimu wishGame;
+        SywScore sywScore;
 
         public Form1()
         {
             InitializeComponent();
             //初始化圣遗物副属性评分
             initSywScore();
+            //初始化抽卡历史类型
+            initWishType();
         }
         //https://bbs.nga.cn/read.php?tid=23802190
 
@@ -34,6 +37,7 @@ namespace cs_ys_helper
             Win32Utility.SetCueText(textBox_cookie, "请输入cookie！");
             Win32Utility.SetCueText(textBox_abyss_uid, "请输入游戏uid！");
             Win32Utility.SetCueText(textBox_userinfo_uid, "请输入游戏uid！");
+            Win32Utility.SetCueText(textBox_cookie, "account_id=xxxxxx; cookie_token=xxxxxxx");
             comboBox_wish_type.SelectedIndex = 2;
             //u初始化抽卡对象
             wishGame = new WishSimu();
@@ -50,7 +54,7 @@ namespace cs_ys_helper
 
         private void updateSywScore(object sender,EventArgs e)
         {
-
+            sywScore = new SywScore();
 
             try
             {
@@ -89,7 +93,7 @@ namespace cs_ys_helper
 
                 progressBar_sywscore1.Maximum = Convert.ToInt32(max1 * 10);
                 progressBar_sywscore1.Value = Convert.ToInt32(value1 * 10);
-                label_sywscore1.Text = "最大值:";
+
 
 
             }
@@ -503,6 +507,103 @@ namespace cs_ys_helper
         {
             cookie = textBox_cookie.Text.Trim();
             Utils.saveCookie(cookie);
+        }
+
+        //获取许愿历史记录
+        private void button_wishlog_Click(object sender, EventArgs e)
+        {
+            string auth_key = textBox_authkey.Text.Trim();
+            string type = ((ComboxItem)comboBox_wishlogtype.SelectedItem).Value;
+            listView_wishlog.Items.Clear();
+            try
+            {
+                int ct = 20;
+                int page = 1;
+                while (ct == 20) //如果等于20 就持续获取
+                {
+                    JsonData js = Utils.getWishHis(type, auth_key, page);
+                    JsonData datas = js["data"]["list"];
+                    ct = datas.Count;
+                    foreach (JsonData item in datas)
+                    {
+                        ListViewItem lvi = new ListViewItem(item["item_type"].ToString());
+                        lvi.SubItems.Add(item["name"].ToString());
+                        lvi.SubItems.Add(item["rank_type"].ToString());
+                        lvi.SubItems.Add(item["time"].ToString());
+                        lvi.UseItemStyleForSubItems = false;
+
+                        lvi.SubItems[2].BackColor = Utils.getRarityColor((item["rank_type"].ToString()));
+                        listView_wishlog.Items.Add(lvi);
+                    }
+
+                    page++;
+                }
+                int count = listView_wishlog.Items.Count;
+                toolStripStatusLabel1.Text = "[" + DateTime.Now.ToString() + "] " + "查询许愿历史OK! 共查到[" +(count) +"]条记录~";
+                richTextBox_wishlog.Text = anaWish();
+            }
+            catch(Exception ex)
+            {
+                toolStripStatusLabel1.Text = "[" + DateTime.Now.ToString() + "] ERROR!" + ex.Message;
+            }
+        }
+
+
+        //初始化许愿类型
+        private void initWishType()
+        {
+            comboBox_wishlogtype.Items.Clear();
+            comboBox_wishlogtype.Items.Add(new ComboxItem("新手祈愿", "100"));
+            comboBox_wishlogtype.Items.Add(new ComboxItem("常驻祈愿", "200"));
+            comboBox_wishlogtype.Items.Add(new ComboxItem("角色活动祈愿", "301"));
+            comboBox_wishlogtype.Items.Add(new ComboxItem("武器活动祈愿", "302"));
+            comboBox_wishlogtype.SelectedIndex = 0;
+        }
+
+        //分析许愿数据
+        private string anaWish()
+        {
+            List<string> data = new List<string>();
+            string data_str = "";
+            foreach(ListViewItem lvi in listView_wishlog.Items)
+            {
+                data.Add(lvi.SubItems[2].Text);
+                data_str = data_str + lvi.SubItems[2].Text;
+            }
+            int count = data.Count;
+            int ct_4 = data.Count(s => s == "4");
+            int ct_5 = data.Count(s => s == "5");
+
+            
+
+
+
+            string ret = "";
+            ret = ret + string.Format("总抽数:               {0}\n", count);
+            ret = ret + string.Format("4星数|率:             {0}{1:P4}\n", ct_4, (double)ct_4 / (double)count);
+            ret = ret + string.Format("5星数|率:             {0}{1:P4}\n", ct_5, (double)ct_5 / (double)count);
+            ret = ret + string.Format("4星间隔max|min|avg:   {0}|{1}|{2}\n");
+            ret = ret + string.Format("5星间隔max|min|avg:   {0}|{1}|{2}\n");
+            ret = ret + "" + "\n";
+            ret = ret + string.Format("注:算间隔的话" + "\n");
+            return ret ;
+        }
+    }
+
+
+    //支持kv的comboxitem
+    public class ComboxItem
+    {
+        public string Text = "";
+        public string Value = "";
+        public ComboxItem(string _Text, string _Value)
+        {
+            Text = _Text;
+            Value = _Value;
+        }
+        public override string ToString()
+        {
+            return Text;
         }
     }
 }
