@@ -567,8 +567,11 @@ namespace cs_ys_helper
             string data_str = "";
             foreach(ListViewItem lvi in listView_wishlog.Items)
             {
-                data.Add(lvi.SubItems[2].Text);
-                data_str = data_str + lvi.SubItems[2].Text;
+                if (lvi.SubItems.Count > 2)
+                {
+                    data.Add(lvi.SubItems[2].Text);
+                    data_str = data_str + lvi.SubItems[2].Text;
+                }
             }
             int count = data.Count;
             int ct_4 = data.Count(s => s == "4");
@@ -580,12 +583,12 @@ namespace cs_ys_helper
 
             string ret = "";
             ret = ret + string.Format("总抽数:               {0}\n", count);
-            ret = ret + string.Format("4星数|率:             {0}{1:P4}\n", ct_4, (double)ct_4 / (double)count);
-            ret = ret + string.Format("5星数|率:             {0}{1:P4}\n", ct_5, (double)ct_5 / (double)count);
-            ret = ret + string.Format("4星间隔max|min|avg:   {0}|{1}|{2}\n");
-            ret = ret + string.Format("5星间隔max|min|avg:   {0}|{1}|{2}\n");
+            ret = ret + string.Format("4星数|率:             {0}|{1:P4}\n", ct_4, (double)ct_4  / (double)count);
+            ret = ret + string.Format("5星数|率:             {0}|{1:P4}\n", ct_5, (double)ct_5  / (double)count);
+            //ret = ret + string.Format("4星间隔max|min|avg:   {0}|{1}|{2}\n");
+            //ret = ret + string.Format("5星间隔max|min|avg:   {0}|{1}|{2}\n");
             ret = ret + "" + "\n";
-            ret = ret + string.Format("注:算间隔的话" + "\n");
+            ret = ret + string.Format("注:算4星间隔的话5星也算4星" + "\n");
             return ret ;
         }
     }
