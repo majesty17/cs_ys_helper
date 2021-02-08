@@ -93,6 +93,17 @@
             this.button_wish10 = new System.Windows.Forms.Button();
             this.button_wish1 = new System.Windows.Forms.Button();
             this.comboBox_wish_type = new System.Windows.Forms.ComboBox();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.button_wishloghelp = new System.Windows.Forms.Button();
+            this.richTextBox_wishlog = new System.Windows.Forms.RichTextBox();
+            this.listView_wishlog = new System.Windows.Forms.ListView();
+            this.columnHeader38 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader39 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader35 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader41 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.button_wishlog = new System.Windows.Forms.Button();
+            this.comboBox_wishlogtype = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.richTextBox_sywscore = new System.Windows.Forms.RichTextBox();
             this.progressBar_sywscore4 = new System.Windows.Forms.ProgressBar();
@@ -112,15 +123,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox_sywscore1 = new System.Windows.Forms.ComboBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.listView_wishlog = new System.Windows.Forms.ListView();
-            this.columnHeader38 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader39 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader35 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader41 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button_wishlog = new System.Windows.Forms.Button();
-            this.comboBox_wishlogtype = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.textBox_authkey = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -128,7 +130,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.richTextBox_wishlog = new System.Windows.Forms.RichTextBox();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.label11 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -136,8 +139,8 @@
             this.groupBox1.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage6.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             this.tabPage7.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -150,9 +153,10 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage6);
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage7);
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage8);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(3, 2);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -764,6 +768,111 @@
             this.comboBox_wish_type.Size = new System.Drawing.Size(177, 23);
             this.comboBox_wish_type.TabIndex = 0;
             // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.button_wishloghelp);
+            this.tabPage7.Controls.Add(this.richTextBox_wishlog);
+            this.tabPage7.Controls.Add(this.listView_wishlog);
+            this.tabPage7.Controls.Add(this.button_wishlog);
+            this.tabPage7.Controls.Add(this.comboBox_wishlogtype);
+            this.tabPage7.Controls.Add(this.label10);
+            this.tabPage7.Location = new System.Drawing.Point(4, 25);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Size = new System.Drawing.Size(1189, 661);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "抽卡历史查询";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // button_wishloghelp
+            // 
+            this.button_wishloghelp.Location = new System.Drawing.Point(331, 27);
+            this.button_wishloghelp.Name = "button_wishloghelp";
+            this.button_wishloghelp.Size = new System.Drawing.Size(33, 34);
+            this.button_wishloghelp.TabIndex = 13;
+            this.button_wishloghelp.Text = "？";
+            this.button_wishloghelp.UseVisualStyleBackColor = true;
+            this.button_wishloghelp.Click += new System.EventHandler(this.button_wishloghelp_Click);
+            // 
+            // richTextBox_wishlog
+            // 
+            this.richTextBox_wishlog.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.richTextBox_wishlog.Location = new System.Drawing.Point(603, 80);
+            this.richTextBox_wishlog.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.richTextBox_wishlog.Name = "richTextBox_wishlog";
+            this.richTextBox_wishlog.ReadOnly = true;
+            this.richTextBox_wishlog.Size = new System.Drawing.Size(543, 215);
+            this.richTextBox_wishlog.TabIndex = 12;
+            this.richTextBox_wishlog.Text = "";
+            // 
+            // listView_wishlog
+            // 
+            this.listView_wishlog.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.listView_wishlog.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listView_wishlog.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader38,
+            this.columnHeader39,
+            this.columnHeader35,
+            this.columnHeader41});
+            this.listView_wishlog.FullRowSelect = true;
+            this.listView_wishlog.GridLines = true;
+            this.listView_wishlog.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listView_wishlog.HideSelection = false;
+            this.listView_wishlog.Location = new System.Drawing.Point(26, 80);
+            this.listView_wishlog.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listView_wishlog.MultiSelect = false;
+            this.listView_wishlog.Name = "listView_wishlog";
+            this.listView_wishlog.Size = new System.Drawing.Size(571, 558);
+            this.listView_wishlog.TabIndex = 10;
+            this.listView_wishlog.UseCompatibleStateImageBehavior = false;
+            this.listView_wishlog.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader38
+            // 
+            this.columnHeader38.Text = "类型";
+            // 
+            // columnHeader39
+            // 
+            this.columnHeader39.Text = "名字";
+            this.columnHeader39.Width = 100;
+            // 
+            // columnHeader35
+            // 
+            this.columnHeader35.Text = "稀有度";
+            // 
+            // columnHeader41
+            // 
+            this.columnHeader41.Text = "时间";
+            this.columnHeader41.Width = 200;
+            // 
+            // button_wishlog
+            // 
+            this.button_wishlog.Location = new System.Drawing.Point(240, 23);
+            this.button_wishlog.Name = "button_wishlog";
+            this.button_wishlog.Size = new System.Drawing.Size(85, 42);
+            this.button_wishlog.TabIndex = 2;
+            this.button_wishlog.Text = "查询";
+            this.button_wishlog.UseVisualStyleBackColor = true;
+            this.button_wishlog.Click += new System.EventHandler(this.button_wishlog_Click);
+            // 
+            // comboBox_wishlogtype
+            // 
+            this.comboBox_wishlogtype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_wishlogtype.FormattingEnabled = true;
+            this.comboBox_wishlogtype.Location = new System.Drawing.Point(66, 34);
+            this.comboBox_wishlogtype.Name = "comboBox_wishlogtype";
+            this.comboBox_wishlogtype.Size = new System.Drawing.Size(168, 23);
+            this.comboBox_wishlogtype.TabIndex = 1;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(23, 37);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(37, 15);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "类型";
+            // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.richTextBox_sywscore);
@@ -965,91 +1074,9 @@
             this.tabPage5.Text = "消耗计算器(ing)";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // tabPage7
-            // 
-            this.tabPage7.Controls.Add(this.richTextBox_wishlog);
-            this.tabPage7.Controls.Add(this.listView_wishlog);
-            this.tabPage7.Controls.Add(this.button_wishlog);
-            this.tabPage7.Controls.Add(this.comboBox_wishlogtype);
-            this.tabPage7.Controls.Add(this.label10);
-            this.tabPage7.Location = new System.Drawing.Point(4, 25);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1189, 661);
-            this.tabPage7.TabIndex = 6;
-            this.tabPage7.Text = "抽卡历史查询(ing)";
-            this.tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // listView_wishlog
-            // 
-            this.listView_wishlog.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.listView_wishlog.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listView_wishlog.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader38,
-            this.columnHeader39,
-            this.columnHeader35,
-            this.columnHeader41});
-            this.listView_wishlog.FullRowSelect = true;
-            this.listView_wishlog.GridLines = true;
-            this.listView_wishlog.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listView_wishlog.HideSelection = false;
-            this.listView_wishlog.Location = new System.Drawing.Point(26, 80);
-            this.listView_wishlog.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.listView_wishlog.MultiSelect = false;
-            this.listView_wishlog.Name = "listView_wishlog";
-            this.listView_wishlog.Size = new System.Drawing.Size(571, 558);
-            this.listView_wishlog.TabIndex = 10;
-            this.listView_wishlog.UseCompatibleStateImageBehavior = false;
-            this.listView_wishlog.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader38
-            // 
-            this.columnHeader38.Text = "类型";
-            // 
-            // columnHeader39
-            // 
-            this.columnHeader39.Text = "名字";
-            this.columnHeader39.Width = 100;
-            // 
-            // columnHeader35
-            // 
-            this.columnHeader35.Text = "稀有度";
-            // 
-            // columnHeader41
-            // 
-            this.columnHeader41.Text = "时间";
-            this.columnHeader41.Width = 200;
-            // 
-            // button_wishlog
-            // 
-            this.button_wishlog.Location = new System.Drawing.Point(240, 23);
-            this.button_wishlog.Name = "button_wishlog";
-            this.button_wishlog.Size = new System.Drawing.Size(85, 42);
-            this.button_wishlog.TabIndex = 2;
-            this.button_wishlog.Text = "查询";
-            this.button_wishlog.UseVisualStyleBackColor = true;
-            this.button_wishlog.Click += new System.EventHandler(this.button_wishlog_Click);
-            // 
-            // comboBox_wishlogtype
-            // 
-            this.comboBox_wishlogtype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_wishlogtype.FormattingEnabled = true;
-            this.comboBox_wishlogtype.Location = new System.Drawing.Point(66, 34);
-            this.comboBox_wishlogtype.Name = "comboBox_wishlogtype";
-            this.comboBox_wishlogtype.Size = new System.Drawing.Size(168, 23);
-            this.comboBox_wishlogtype.TabIndex = 1;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(23, 37);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(37, 15);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "类型";
-            // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.label11);
             this.tabPage3.Controls.Add(this.textBox_authkey);
             this.tabPage3.Controls.Add(this.label9);
             this.tabPage3.Controls.Add(this.textBox_cookie);
@@ -1060,7 +1087,7 @@
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage3.Size = new System.Drawing.Size(1189, 661);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "配置cookie";
+            this.tabPage3.Text = "配置cookie等";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // textBox_authkey
@@ -1118,16 +1145,24 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(167, 20);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
-            // richTextBox_wishlog
+            // tabPage8
             // 
-            this.richTextBox_wishlog.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox_wishlog.Location = new System.Drawing.Point(603, 80);
-            this.richTextBox_wishlog.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.richTextBox_wishlog.Name = "richTextBox_wishlog";
-            this.richTextBox_wishlog.ReadOnly = true;
-            this.richTextBox_wishlog.Size = new System.Drawing.Size(543, 215);
-            this.richTextBox_wishlog.TabIndex = 12;
-            this.richTextBox_wishlog.Text = "";
+            this.tabPage8.Location = new System.Drawing.Point(4, 25);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage8.Size = new System.Drawing.Size(1189, 661);
+            this.tabPage8.TabIndex = 7;
+            this.tabPage8.Text = "素材日历(ing)";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(93, 315);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(398, 15);
+            this.label11.TabIndex = 4;
+            this.label11.Text = "注:cookie一般不会过期，auth key过期时间12小时左右；";
             // 
             // Form1
             // 
@@ -1152,10 +1187,10 @@
             this.tabPage4.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
@@ -1268,6 +1303,9 @@
         private System.Windows.Forms.ColumnHeader columnHeader41;
         private System.Windows.Forms.ColumnHeader columnHeader35;
         private System.Windows.Forms.RichTextBox richTextBox_wishlog;
+        private System.Windows.Forms.Button button_wishloghelp;
+        private System.Windows.Forms.TabPage tabPage8;
+        private System.Windows.Forms.Label label11;
     }
 }
 

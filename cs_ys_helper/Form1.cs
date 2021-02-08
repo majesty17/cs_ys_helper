@@ -305,7 +305,7 @@ namespace cs_ys_helper
                 info = info + "获胜次数\t" + data["total_win_times"].ToString() + "\n";
                 info = info + "星星个数\t" + data["total_star"].ToString() + "\n";
                 info = info + "开始时间\t" + Utils.ts2Date(data["start_time"].ToString()) + "\n";
-                info = info + "开始时间\t" + Utils.ts2Date(data["end_time"].ToString()) + "\n";
+                info = info + "结束时间\t" + Utils.ts2Date(data["end_time"].ToString()) + "\n";
                 richTextBox_abyss_info.Text = info;
 
 
@@ -577,19 +577,73 @@ namespace cs_ys_helper
             int ct_4 = data.Count(s => s == "4");
             int ct_5 = data.Count(s => s == "5");
 
-            
+            string[] spl_5 = data_str.Split(new char[1] { '5' });
+            string[] spl_4 = data_str.Replace('5', '4').Split(new char[1] { '4' });
 
+
+            float avg_4, avg_5;
+            int max_4, max_5, min_4, min_5;
+
+
+            if (spl_4.Length == 1)
+            {
+                min_4 = -1;
+                max_4 = -1;
+                avg_4 = -1;
+            }
+            else
+            {
+                min_4 = int.MaxValue;
+                max_4 = int.MinValue;
+                int sum = 0;
+                for(int i = 1; i < spl_4.Length; i++)
+                {
+                    if (spl_4[i].Length < min_4) min_4 = spl_4[i].Length;
+                    if (spl_4[i].Length > max_4) max_4 = spl_4[i].Length;
+                    sum += spl_4[i].Length;
+                }
+                avg_4 = (float)sum / (float)(spl_4.Length - 1);
+            }
+
+            if (spl_5.Length == 1)
+            {
+                min_5 = -1;
+                max_5 = -1;
+                avg_5 = -1;
+            }
+            else
+            {
+                min_5 = int.MaxValue;
+                max_5 = int.MinValue;
+                int sum = 0;
+                for (int i = 1; i < spl_5.Length; i++)
+                {
+                    if (spl_5[i].Length < min_5) min_5 = spl_5[i].Length;
+                    if (spl_5[i].Length > max_5) max_5 = spl_5[i].Length;
+                    sum += spl_5[i].Length;
+                }
+                avg_5 = (float)sum / (float)(spl_5.Length - 1);
+            }
+
+
+            Console.WriteLine(data_str);
 
 
             string ret = "";
             ret = ret + string.Format("总抽数:               {0}\n", count);
             ret = ret + string.Format("4星数|率:             {0}|{1:P4}\n", ct_4, (double)ct_4  / (double)count);
             ret = ret + string.Format("5星数|率:             {0}|{1:P4}\n", ct_5, (double)ct_5  / (double)count);
-            //ret = ret + string.Format("4星间隔max|min|avg:   {0}|{1}|{2}\n");
-            //ret = ret + string.Format("5星间隔max|min|avg:   {0}|{1}|{2}\n");
+            ret = ret + string.Format("4星间隔max|min|avg:   {0}|{1}|{2:f2}\n", max_4, min_4, avg_4);
+            ret = ret + string.Format("5星间隔max|min|avg:   {0}|{1}|{2:f2}\n", max_5, min_5, avg_5);
             ret = ret + "" + "\n";
-            ret = ret + string.Format("注:算4星间隔的话5星也算4星" + "\n");
+            ret = ret + string.Format("注1:算4星间隔的话5星也按照4星来算;" + "\n");
+            ret = ret + string.Format("注2:这里说的是两次中的间隔,而不是第几次中;" + "\n");
             return ret ;
+        }
+
+        private void button_wishloghelp_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("此查询需auth_key，获取方式可以咨询本人，也可以参考此git：https://github.com/pcrbot/erinilis-modules/tree/master/genshingachalog", "注意事项",MessageBoxButtons.OK);
         }
     }
 
