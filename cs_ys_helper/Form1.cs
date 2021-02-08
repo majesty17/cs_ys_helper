@@ -18,7 +18,7 @@ namespace cs_ys_helper
         string cookie;
 
         WishSimu wishGame;
-        SywScore sywScore;
+        //SywScore sywScore;
 
         public Form1()
         {
@@ -51,10 +51,10 @@ namespace cs_ys_helper
 
 
 
-
+        //圣遗物评分
         private void updateSywScore(object sender,EventArgs e)
         {
-            sywScore = new SywScore();
+            //sywScore = new SywScore();
 
             try
             {
@@ -81,19 +81,14 @@ namespace cs_ys_helper
                 double value3 = Convert.ToDouble(textBox_sywscore3.Text);
                 double value4 = Convert.ToDouble(textBox_sywscore4.Text);
 
-                int ind1 = Data.SywSecondAttrName.ToList().IndexOf(item1);
-                int ind2 = Data.SywSecondAttrName.ToList().IndexOf(item2);
-                int ind3 = Data.SywSecondAttrName.ToList().IndexOf(item3);
-                int ind4 = Data.SywSecondAttrName.ToList().IndexOf(item4);
-                Console.WriteLine(ind1 + "," + ind4);
-                double max1 = Data.SywSecondAttrValue[ind1, 4];
-                double max2 = Data.SywSecondAttrValue[ind2, 4];
-                double max3 = Data.SywSecondAttrValue[ind3, 4];
-                double max4 = Data.SywSecondAttrValue[ind4, 4];
+                //MessageBox.Show(SywScore.getScore(item1, value1));
+                string content = SywScore.getScore(new string[4] { item1, item2, item3, item4 },
+                    new double[4] { value1, value2, value3, value4 }
+                );
 
-                progressBar_sywscore1.Maximum = Convert.ToInt32(max1 * 10);
-                progressBar_sywscore1.Value = Convert.ToInt32(value1 * 10);
 
+
+                richTextBox_sywscore.Text = content;
 
 
             }
@@ -117,8 +112,8 @@ namespace cs_ys_helper
                 comboBox_sywscore3.Items.Add(names[i]);
                 comboBox_sywscore4.Items.Add(names[i]);
             }
-            comboBox_sywscore1.SelectedIndex = 0;
-            comboBox_sywscore2.SelectedIndex = 1;
+            comboBox_sywscore1.SelectedIndex = 9;
+            comboBox_sywscore2.SelectedIndex = 7;
             comboBox_sywscore3.SelectedIndex = 2;
             comboBox_sywscore4.SelectedIndex = 3;
         }
@@ -143,7 +138,7 @@ namespace cs_ys_helper
                 JsonData avatars = userinfo["data"]["avatars"];
                 foreach(JsonData role in avatars)
                 {
-                    Console.WriteLine(role["name"].ToString());
+                    Console.WriteLine(role["name"].ToString()); 
                     ListViewItem lvi = new ListViewItem(role["name"].ToString());
                     lvi.SubItems.Add(Utils.getElement(role["element"].ToString()));
                     lvi.SubItems.Add(role["fetter"].ToString());

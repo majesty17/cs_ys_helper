@@ -9,17 +9,18 @@ namespace cs_ys_helper
     class Data
     {
         public static string VERSION = "2.2.1";
-        public static string[] SywSecondAttrName = { "数值生命值",
-                "数值攻击力",
-                "数值防御力",
-                "元素精通",
-                "元素充能%",
-                "百分比防御力%",
-                "百分比生命值%",
-                "百分比攻击力%",
-                "暴击率%",
-                "暴击伤害%"
-        };
+        public static string[] SywSecondAttrName = {
+            "数值生命值",
+            "数值攻击力",
+            "数值防御力",
+            "元素精通",
+            "元素充能%",
+            "百分比防御力%",
+            "百分比生命值%",
+            "百分比攻击力%",
+            "暴击率%",
+            "暴击伤害%"
+        };/*
         public static float[,] SywSecondAttrValue = {
             { 209.0f, 239.0f, 269.0f, 299.0f, 1495.0f },
             {14.0f,16.0f,18f,19f,95f },
@@ -31,7 +32,20 @@ namespace cs_ys_helper
             {4.1f,4.7f,5.3f,5.8f,29f },
             {2.7f,3.1f,3.5f,3.9f,19.5f },
             {5.4f,6.2f,7.0f,7.8f,39f }
+        };*/
+        public static float[] SywSecondAttrValue = {
+            4780f,
+            311f,
+            370f,
+            187f,
+            51.8f,
+            58.3f,
+            46.6f,
+            46.6f,
+            31.1f,
+            62.2f
         };
+
 
         public static double rate_5 = 0.006d;
         public static double rate_4 = 0.051d;

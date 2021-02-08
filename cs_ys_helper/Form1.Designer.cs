@@ -106,10 +106,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.richTextBox_sywscore = new System.Windows.Forms.RichTextBox();
-            this.progressBar_sywscore4 = new System.Windows.Forms.ProgressBar();
-            this.progressBar_sywscore3 = new System.Windows.Forms.ProgressBar();
-            this.progressBar_sywscore2 = new System.Windows.Forms.ProgressBar();
-            this.progressBar_sywscore1 = new System.Windows.Forms.ProgressBar();
             this.textBox_sywscore4 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox_sywscore4 = new System.Windows.Forms.ComboBox();
@@ -122,16 +118,16 @@
             this.textBox_sywscore1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox_sywscore1 = new System.Windows.Forms.ComboBox();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label11 = new System.Windows.Forms.Label();
             this.textBox_authkey = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox_cookie = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.label11 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -506,8 +502,8 @@
             // 
             // columnHeader26
             // 
-            this.columnHeader26.Text = "层数";
-            this.columnHeader26.Width = 40;
+            this.columnHeader26.Text = "层";
+            this.columnHeader26.Width = 30;
             // 
             // columnHeader29
             // 
@@ -516,8 +512,8 @@
             // 
             // columnHeader28
             // 
-            this.columnHeader28.Text = "房间";
-            this.columnHeader28.Width = 42;
+            this.columnHeader28.Text = "间";
+            this.columnHeader28.Width = 38;
             // 
             // columnHeader25
             // 
@@ -526,8 +522,8 @@
             // 
             // columnHeader27
             // 
-            this.columnHeader27.Text = "上|下";
-            this.columnHeader27.Width = 47;
+            this.columnHeader27.Text = "半";
+            this.columnHeader27.Width = 35;
             // 
             // columnHeader30
             // 
@@ -876,10 +872,6 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.richTextBox_sywscore);
-            this.tabPage1.Controls.Add(this.progressBar_sywscore4);
-            this.tabPage1.Controls.Add(this.progressBar_sywscore3);
-            this.tabPage1.Controls.Add(this.progressBar_sywscore2);
-            this.tabPage1.Controls.Add(this.progressBar_sywscore1);
             this.tabPage1.Controls.Add(this.textBox_sywscore4);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.comboBox_sywscore4);
@@ -898,51 +890,19 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Size = new System.Drawing.Size(1189, 661);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "圣遗物副属性评分(ing)";
+            this.tabPage1.Text = "圣遗物副属性评分";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // richTextBox_sywscore
             // 
             this.richTextBox_sywscore.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox_sywscore.Location = new System.Drawing.Point(565, 24);
+            this.richTextBox_sywscore.Location = new System.Drawing.Point(30, 191);
             this.richTextBox_sywscore.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.richTextBox_sywscore.Name = "richTextBox_sywscore";
             this.richTextBox_sywscore.ReadOnly = true;
-            this.richTextBox_sywscore.Size = new System.Drawing.Size(319, 148);
+            this.richTextBox_sywscore.Size = new System.Drawing.Size(720, 221);
             this.richTextBox_sywscore.TabIndex = 16;
             this.richTextBox_sywscore.Text = "";
-            // 
-            // progressBar_sywscore4
-            // 
-            this.progressBar_sywscore4.Location = new System.Drawing.Point(328, 142);
-            this.progressBar_sywscore4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.progressBar_sywscore4.Name = "progressBar_sywscore4";
-            this.progressBar_sywscore4.Size = new System.Drawing.Size(231, 22);
-            this.progressBar_sywscore4.TabIndex = 15;
-            // 
-            // progressBar_sywscore3
-            // 
-            this.progressBar_sywscore3.Location = new System.Drawing.Point(328, 104);
-            this.progressBar_sywscore3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.progressBar_sywscore3.Name = "progressBar_sywscore3";
-            this.progressBar_sywscore3.Size = new System.Drawing.Size(231, 22);
-            this.progressBar_sywscore3.TabIndex = 14;
-            // 
-            // progressBar_sywscore2
-            // 
-            this.progressBar_sywscore2.Location = new System.Drawing.Point(328, 64);
-            this.progressBar_sywscore2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.progressBar_sywscore2.Name = "progressBar_sywscore2";
-            this.progressBar_sywscore2.Size = new System.Drawing.Size(231, 22);
-            this.progressBar_sywscore2.TabIndex = 13;
-            // 
-            // progressBar_sywscore1
-            // 
-            this.progressBar_sywscore1.Location = new System.Drawing.Point(328, 26);
-            this.progressBar_sywscore1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.progressBar_sywscore1.Name = "progressBar_sywscore1";
-            this.progressBar_sywscore1.Size = new System.Drawing.Size(231, 22);
-            this.progressBar_sywscore1.TabIndex = 12;
             // 
             // textBox_sywscore4
             // 
@@ -951,7 +911,7 @@
             this.textBox_sywscore4.Name = "textBox_sywscore4";
             this.textBox_sywscore4.Size = new System.Drawing.Size(45, 25);
             this.textBox_sywscore4.TabIndex = 11;
-            this.textBox_sywscore4.Text = "0";
+            this.textBox_sywscore4.Text = "40";
             this.textBox_sywscore4.TextChanged += new System.EventHandler(this.updateSywScore);
             // 
             // label4
@@ -981,7 +941,7 @@
             this.textBox_sywscore3.Name = "textBox_sywscore3";
             this.textBox_sywscore3.Size = new System.Drawing.Size(45, 25);
             this.textBox_sywscore3.TabIndex = 8;
-            this.textBox_sywscore3.Text = "0";
+            this.textBox_sywscore3.Text = "19";
             this.textBox_sywscore3.TextChanged += new System.EventHandler(this.updateSywScore);
             // 
             // label3
@@ -1011,7 +971,7 @@
             this.textBox_sywscore2.Name = "textBox_sywscore2";
             this.textBox_sywscore2.Size = new System.Drawing.Size(45, 25);
             this.textBox_sywscore2.TabIndex = 5;
-            this.textBox_sywscore2.Text = "0";
+            this.textBox_sywscore2.Text = "5.3";
             this.textBox_sywscore2.TextChanged += new System.EventHandler(this.updateSywScore);
             // 
             // label2
@@ -1041,7 +1001,7 @@
             this.textBox_sywscore1.Name = "textBox_sywscore1";
             this.textBox_sywscore1.Size = new System.Drawing.Size(45, 25);
             this.textBox_sywscore1.TabIndex = 2;
-            this.textBox_sywscore1.Text = "0";
+            this.textBox_sywscore1.Text = "25.7";
             this.textBox_sywscore1.TextChanged += new System.EventHandler(this.updateSywScore);
             // 
             // label1
@@ -1063,6 +1023,16 @@
             this.comboBox_sywscore1.Size = new System.Drawing.Size(149, 23);
             this.comboBox_sywscore1.TabIndex = 0;
             this.comboBox_sywscore1.TextChanged += new System.EventHandler(this.updateSywScore);
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.Location = new System.Drawing.Point(4, 25);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage8.Size = new System.Drawing.Size(1189, 661);
+            this.tabPage8.TabIndex = 7;
+            this.tabPage8.Text = "素材日历(ing)";
+            this.tabPage8.UseVisualStyleBackColor = true;
             // 
             // tabPage5
             // 
@@ -1089,6 +1059,15 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "配置cookie等";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(93, 315);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(398, 15);
+            this.label11.TabIndex = 4;
+            this.label11.Text = "注:cookie一般不会过期，auth key过期时间12小时左右；";
             // 
             // textBox_authkey
             // 
@@ -1145,25 +1124,6 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(167, 20);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
-            // tabPage8
-            // 
-            this.tabPage8.Location = new System.Drawing.Point(4, 25);
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(1189, 661);
-            this.tabPage8.TabIndex = 7;
-            this.tabPage8.Text = "素材日历(ing)";
-            this.tabPage8.UseVisualStyleBackColor = true;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(93, 315);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(398, 15);
-            this.label11.TabIndex = 4;
-            this.label11.Text = "注:cookie一般不会过期，auth key过期时间12小时左右；";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -1175,7 +1135,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Genshin Impact Helper";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
@@ -1216,10 +1175,6 @@
         private System.Windows.Forms.TextBox textBox_sywscore2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox_sywscore2;
-        private System.Windows.Forms.ProgressBar progressBar_sywscore1;
-        private System.Windows.Forms.ProgressBar progressBar_sywscore4;
-        private System.Windows.Forms.ProgressBar progressBar_sywscore3;
-        private System.Windows.Forms.ProgressBar progressBar_sywscore2;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.TabPage tabPage2;
