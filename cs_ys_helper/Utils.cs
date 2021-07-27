@@ -17,6 +17,7 @@ namespace cs_ys_helper
     {
 
 
+
         //获取用户信息
         public static JsonData getUserInfo(string uid,string cookie)
         {
@@ -35,9 +36,9 @@ namespace cs_ys_helper
             myRequest.Headers.Add("DS", getDS());
             myRequest.Headers.Add("Origin", "https://webstatic.mihoyo.com");
             myRequest.Headers.Add("x-rpc-app_version", Data.VERSION);
-            myRequest.Headers.Add("x-rpc-client_type", "4");
+            myRequest.Headers.Add("x-rpc-client_type", Data.CLIENT_TYPE);
             //myRequest.Headers.Add("Accept-Encoding", "gzip, deflate");
-            //myRequest.Headers.Add("Accept-Language", "zh-CN,en-US;q=0.8");
+            myRequest.Headers.Add("Accept-Language", "zh-CN,en-US;q=0.8");
             myRequest.Headers.Add("X-Requested-With", "com.mihoyo.hyperion");
 
             myRequest.UserAgent = "Mozilla/5.0 (Linux; Android 9; Unspecified Device) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/39.0.0.0 Mobile Safari/537.36 miHoYoBBS/2.2.0";
@@ -80,9 +81,9 @@ namespace cs_ys_helper
             myRequest.Headers.Add("DS", getDS());
             myRequest.Headers.Add("Origin", "https://webstatic.mihoyo.com");
             myRequest.Headers.Add("x-rpc-app_version", Data.VERSION);
-            myRequest.Headers.Add("x-rpc-client_type", "4");
+            myRequest.Headers.Add("x-rpc-client_type", Data.CLIENT_TYPE);
             //myRequest.Headers.Add("Accept-Encoding", "gzip, deflate");
-            //myRequest.Headers.Add("Accept-Language", "zh-CN,en-US;q=0.8");
+            myRequest.Headers.Add("Accept-Language", "zh-CN,en-US;q=0.8");
             myRequest.Headers.Add("X-Requested-With", "com.mihoyo.hyperion");
 
             myRequest.UserAgent = "Mozilla/5.0 (Linux; Android 9; Unspecified Device) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/39.0.0.0 Mobile Safari/537.36 miHoYoBBS/2.2.0";
@@ -128,9 +129,9 @@ namespace cs_ys_helper
             myRequest.Headers.Add("DS", getDS());
             myRequest.Headers.Add("Origin", "https://webstatic.mihoyo.com");
             myRequest.Headers.Add("x-rpc-app_version", Data.VERSION);
-            myRequest.Headers.Add("x-rpc-client_type", "4");
+            myRequest.Headers.Add("x-rpc-client_type", Data.CLIENT_TYPE);
             //myRequest.Headers.Add("Accept-Encoding", "gzip, deflate");
-            //myRequest.Headers.Add("Accept-Language", "zh-CN,en-US;q=0.8");
+            myRequest.Headers.Add("Accept-Language", "zh-CN,en-US;q=0.8");
             myRequest.Headers.Add("X-Requested-With", "com.mihoyo.hyperion");
 
             myRequest.UserAgent = "Mozilla/5.0 (Linux; Android 9; Unspecified Device) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/39.0.0.0 Mobile Safari/537.36 miHoYoBBS/2.2.0";
@@ -235,20 +236,19 @@ namespace cs_ys_helper
         //获取签名
         private static string getDS()
         {
-            string n = "";
-            if (Data.VERSION == "2.1.0")
+            string n = Data.SALT;
+ /*           if (Data.VERSION == "2.1.0")
             {
                 n = md5(Data.VERSION);
             }else if (Data.VERSION == "2.2.1")
             {
-                n = "cx2y9z9a29tfqvr1qsq6c7yz99b5jsqt";
+                n = "14bmu1mz0yuljprsfgpvjh3ju2ni468r";
             }
             else
             {
                 Data.VERSION = "2.2.1";
-                n = "cx2y9z9a29tfqvr1qsq6c7yz99b5jsqt";
-            }
-
+                n = "14bmu1mz0yuljprsfgpvjh3ju2ni468r";
+            }*/
             TimeSpan ts = DateTime.Now - new DateTime(1970, 1, 1, 0, 0, 0, 0);
             string i = Convert.ToInt64(ts.TotalSeconds - 28800).ToString();
             Console.WriteLine(i);

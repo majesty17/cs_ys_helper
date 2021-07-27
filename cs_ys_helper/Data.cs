@@ -8,7 +8,9 @@ namespace cs_ys_helper
 {
     class Data
     {
-        public static string VERSION = "2.2.1";
+        public static string VERSION = "2.7.0";
+        public static string SALT = "14bmu1mz0yuljprsfgpvjh3ju2ni468r";
+        public static string CLIENT_TYPE = "5";
         public static string[] SywSecondAttrName = {
             "数值生命值",
             "数值攻击力",

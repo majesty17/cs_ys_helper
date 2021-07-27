@@ -308,6 +308,12 @@ namespace cs_ys_helper
                 listView_rank.Items.Clear();
                 ListViewItem[] lvi = new ListViewItem[5];
 
+                if (data["floors"].Count == 0)
+                {
+                    toolStripStatusLabel1.Text = "[" + DateTime.Now.ToString() + "] 查询深渊信息OK！(无信息...)";
+                    return;
+                }
+
                 lvi[0] = new ListViewItem("最多击破数");
                 lvi[0].SubItems.Add(data["defeat_rank"][0]["value"].ToString());
                 lvi[0].SubItems.Add(Utils.code2name(data["defeat_rank"][0]["avatar_id"].ToString()));
