@@ -154,11 +154,11 @@
             this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(3, 2);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabControl1.Location = new System.Drawing.Point(2, 2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1197, 690);
+            this.tabControl1.Size = new System.Drawing.Size(970, 603);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage2
@@ -170,11 +170,11 @@
             this.tabPage2.Controls.Add(this.button_userinfo);
             this.tabPage2.Controls.Add(this.textBox_userinfo_uid);
             this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(1189, 661);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage2.Size = new System.Drawing.Size(962, 577);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "角色信息查询";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -186,22 +186,22 @@
             this.groupBox2.Controls.Add(this.listView_userweapon);
             this.groupBox2.Controls.Add(this.listView_syw);
             this.groupBox2.Controls.Add(this.pictureBox_roledetails);
-            this.groupBox2.Location = new System.Drawing.Point(596, 41);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Location = new System.Drawing.Point(447, 33);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(583, 612);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Size = new System.Drawing.Size(505, 538);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "角色详情";
             // 
             // richTextBox_roledetails
             // 
-            this.richTextBox_roledetails.Location = new System.Drawing.Point(287, 21);
-            this.richTextBox_roledetails.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.richTextBox_roledetails.Location = new System.Drawing.Point(215, 17);
+            this.richTextBox_roledetails.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox_roledetails.Name = "richTextBox_roledetails";
             this.richTextBox_roledetails.ReadOnly = true;
-            this.richTextBox_roledetails.Size = new System.Drawing.Size(289, 132);
+            this.richTextBox_roledetails.Size = new System.Drawing.Size(218, 106);
             this.richTextBox_roledetails.TabIndex = 15;
             this.richTextBox_roledetails.Text = "";
             // 
@@ -217,11 +217,11 @@
             this.listView_life.FullRowSelect = true;
             this.listView_life.GridLines = true;
             this.listView_life.HideSelection = false;
-            this.listView_life.Location = new System.Drawing.Point(287, 159);
-            this.listView_life.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listView_life.Location = new System.Drawing.Point(215, 127);
+            this.listView_life.Margin = new System.Windows.Forms.Padding(2);
             this.listView_life.MultiSelect = false;
             this.listView_life.Name = "listView_life";
-            this.listView_life.Size = new System.Drawing.Size(290, 188);
+            this.listView_life.Size = new System.Drawing.Size(218, 151);
             this.listView_life.TabIndex = 14;
             this.listView_life.UseCompatibleStateImageBehavior = false;
             this.listView_life.View = System.Windows.Forms.View.Details;
@@ -251,11 +251,11 @@
             this.listView_userweapon.FullRowSelect = true;
             this.listView_userweapon.GridLines = true;
             this.listView_userweapon.HideSelection = false;
-            this.listView_userweapon.Location = new System.Drawing.Point(5, 352);
-            this.listView_userweapon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listView_userweapon.Location = new System.Drawing.Point(4, 282);
+            this.listView_userweapon.Margin = new System.Windows.Forms.Padding(2);
             this.listView_userweapon.MultiSelect = false;
             this.listView_userweapon.Name = "listView_userweapon";
-            this.listView_userweapon.Size = new System.Drawing.Size(571, 81);
+            this.listView_userweapon.Size = new System.Drawing.Size(429, 113);
             this.listView_userweapon.TabIndex = 13;
             this.listView_userweapon.UseCompatibleStateImageBehavior = false;
             this.listView_userweapon.View = System.Windows.Forms.View.Details;
@@ -296,11 +296,11 @@
             this.listView_syw.FullRowSelect = true;
             this.listView_syw.GridLines = true;
             this.listView_syw.HideSelection = false;
-            this.listView_syw.Location = new System.Drawing.Point(5, 440);
-            this.listView_syw.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listView_syw.Location = new System.Drawing.Point(4, 399);
+            this.listView_syw.Margin = new System.Windows.Forms.Padding(2);
             this.listView_syw.MultiSelect = false;
             this.listView_syw.Name = "listView_syw";
-            this.listView_syw.Size = new System.Drawing.Size(571, 157);
+            this.listView_syw.Size = new System.Drawing.Size(429, 127);
             this.listView_syw.TabIndex = 12;
             this.listView_syw.UseCompatibleStateImageBehavior = false;
             this.listView_syw.View = System.Windows.Forms.View.Details;
@@ -333,10 +333,10 @@
             // 
             this.pictureBox_roledetails.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox_roledetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox_roledetails.Location = new System.Drawing.Point(5, 21);
-            this.pictureBox_roledetails.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox_roledetails.Location = new System.Drawing.Point(4, 17);
+            this.pictureBox_roledetails.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_roledetails.Name = "pictureBox_roledetails";
-            this.pictureBox_roledetails.Size = new System.Drawing.Size(275, 326);
+            this.pictureBox_roledetails.Size = new System.Drawing.Size(207, 261);
             this.pictureBox_roledetails.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox_roledetails.TabIndex = 11;
             this.pictureBox_roledetails.TabStop = false;
@@ -346,11 +346,11 @@
             this.groupBox1.Controls.Add(this.richTextBox_usercity);
             this.groupBox1.Controls.Add(this.richTextBox_userinfo);
             this.groupBox1.Controls.Add(this.listView_rolelist);
-            this.groupBox1.Location = new System.Drawing.Point(9, 41);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Location = new System.Drawing.Point(7, 33);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(581, 612);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(426, 538);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "全局角色信息(点击展示详情)";
@@ -358,22 +358,22 @@
             // richTextBox_usercity
             // 
             this.richTextBox_usercity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox_usercity.Location = new System.Drawing.Point(365, 308);
-            this.richTextBox_usercity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.richTextBox_usercity.Location = new System.Drawing.Point(274, 265);
+            this.richTextBox_usercity.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox_usercity.Name = "richTextBox_usercity";
             this.richTextBox_usercity.ReadOnly = true;
-            this.richTextBox_usercity.Size = new System.Drawing.Size(199, 290);
+            this.richTextBox_usercity.Size = new System.Drawing.Size(150, 261);
             this.richTextBox_usercity.TabIndex = 8;
             this.richTextBox_usercity.Text = "";
             // 
             // richTextBox_userinfo
             // 
             this.richTextBox_userinfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox_userinfo.Location = new System.Drawing.Point(365, 24);
-            this.richTextBox_userinfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.richTextBox_userinfo.Location = new System.Drawing.Point(274, 19);
+            this.richTextBox_userinfo.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox_userinfo.Name = "richTextBox_userinfo";
             this.richTextBox_userinfo.ReadOnly = true;
-            this.richTextBox_userinfo.Size = new System.Drawing.Size(199, 276);
+            this.richTextBox_userinfo.Size = new System.Drawing.Size(150, 242);
             this.richTextBox_userinfo.TabIndex = 7;
             this.richTextBox_userinfo.Text = "";
             // 
@@ -392,11 +392,11 @@
             this.listView_rolelist.GridLines = true;
             this.listView_rolelist.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView_rolelist.HideSelection = false;
-            this.listView_rolelist.Location = new System.Drawing.Point(5, 24);
-            this.listView_rolelist.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listView_rolelist.Location = new System.Drawing.Point(4, 19);
+            this.listView_rolelist.Margin = new System.Windows.Forms.Padding(2);
             this.listView_rolelist.MultiSelect = false;
             this.listView_rolelist.Name = "listView_rolelist";
-            this.listView_rolelist.Size = new System.Drawing.Size(354, 573);
+            this.listView_rolelist.Size = new System.Drawing.Size(266, 507);
             this.listView_rolelist.TabIndex = 6;
             this.listView_rolelist.UseCompatibleStateImageBehavior = false;
             this.listView_rolelist.View = System.Windows.Forms.View.Details;
@@ -428,10 +428,10 @@
             // 
             // button_userinfo
             // 
-            this.button_userinfo.Location = new System.Drawing.Point(171, 6);
-            this.button_userinfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button_userinfo.Location = new System.Drawing.Point(128, 5);
+            this.button_userinfo.Margin = new System.Windows.Forms.Padding(2);
             this.button_userinfo.Name = "button_userinfo";
-            this.button_userinfo.Size = new System.Drawing.Size(87, 29);
+            this.button_userinfo.Size = new System.Drawing.Size(65, 23);
             this.button_userinfo.TabIndex = 3;
             this.button_userinfo.Text = "查询";
             this.button_userinfo.UseVisualStyleBackColor = true;
@@ -439,19 +439,20 @@
             // 
             // textBox_userinfo_uid
             // 
-            this.textBox_userinfo_uid.Location = new System.Drawing.Point(65, 10);
-            this.textBox_userinfo_uid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_userinfo_uid.Location = new System.Drawing.Point(49, 8);
+            this.textBox_userinfo_uid.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_userinfo_uid.Name = "textBox_userinfo_uid";
-            this.textBox_userinfo_uid.Size = new System.Drawing.Size(100, 25);
+            this.textBox_userinfo_uid.Size = new System.Drawing.Size(76, 21);
             this.textBox_userinfo_uid.TabIndex = 1;
             this.textBox_userinfo_uid.Text = "101879667";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(5, 12);
+            this.label5.Location = new System.Drawing.Point(4, 10);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 15);
+            this.label5.Size = new System.Drawing.Size(41, 12);
             this.label5.TabIndex = 0;
             this.label5.Text = "游戏id";
             // 
@@ -463,10 +464,10 @@
             this.tabPage4.Controls.Add(this.button_searchabyss);
             this.tabPage4.Controls.Add(this.textBox_abyss_uid);
             this.tabPage4.Controls.Add(this.label7);
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1189, 661);
+            this.tabPage4.Size = new System.Drawing.Size(962, 577);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "深渊信息查询";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -491,11 +492,11 @@
             this.listView_abyss_details.GridLines = true;
             this.listView_abyss_details.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView_abyss_details.HideSelection = false;
-            this.listView_abyss_details.Location = new System.Drawing.Point(333, 40);
-            this.listView_abyss_details.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listView_abyss_details.Location = new System.Drawing.Point(250, 32);
+            this.listView_abyss_details.Margin = new System.Windows.Forms.Padding(2);
             this.listView_abyss_details.MultiSelect = false;
             this.listView_abyss_details.Name = "listView_abyss_details";
-            this.listView_abyss_details.Size = new System.Drawing.Size(845, 604);
+            this.listView_abyss_details.Size = new System.Drawing.Size(703, 534);
             this.listView_abyss_details.TabIndex = 10;
             this.listView_abyss_details.UseCompatibleStateImageBehavior = false;
             this.listView_abyss_details.View = System.Windows.Forms.View.Details;
@@ -563,11 +564,11 @@
             this.listView_rank.GridLines = true;
             this.listView_rank.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView_rank.HideSelection = false;
-            this.listView_rank.Location = new System.Drawing.Point(9, 202);
-            this.listView_rank.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listView_rank.Location = new System.Drawing.Point(7, 162);
+            this.listView_rank.Margin = new System.Windows.Forms.Padding(2);
             this.listView_rank.MultiSelect = false;
             this.listView_rank.Name = "listView_rank";
-            this.listView_rank.Size = new System.Drawing.Size(318, 442);
+            this.listView_rank.Size = new System.Drawing.Size(239, 404);
             this.listView_rank.TabIndex = 9;
             this.listView_rank.UseCompatibleStateImageBehavior = false;
             this.listView_rank.View = System.Windows.Forms.View.Details;
@@ -589,20 +590,20 @@
             // richTextBox_abyss_info
             // 
             this.richTextBox_abyss_info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox_abyss_info.Location = new System.Drawing.Point(9, 40);
-            this.richTextBox_abyss_info.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.richTextBox_abyss_info.Location = new System.Drawing.Point(7, 32);
+            this.richTextBox_abyss_info.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox_abyss_info.Name = "richTextBox_abyss_info";
             this.richTextBox_abyss_info.ReadOnly = true;
-            this.richTextBox_abyss_info.Size = new System.Drawing.Size(319, 148);
+            this.richTextBox_abyss_info.Size = new System.Drawing.Size(240, 119);
             this.richTextBox_abyss_info.TabIndex = 8;
             this.richTextBox_abyss_info.Text = "";
             // 
             // button_searchabyss
             // 
-            this.button_searchabyss.Location = new System.Drawing.Point(171, 5);
-            this.button_searchabyss.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button_searchabyss.Location = new System.Drawing.Point(128, 4);
+            this.button_searchabyss.Margin = new System.Windows.Forms.Padding(2);
             this.button_searchabyss.Name = "button_searchabyss";
-            this.button_searchabyss.Size = new System.Drawing.Size(87, 29);
+            this.button_searchabyss.Size = new System.Drawing.Size(65, 23);
             this.button_searchabyss.TabIndex = 6;
             this.button_searchabyss.Text = "查询";
             this.button_searchabyss.UseVisualStyleBackColor = true;
@@ -610,19 +611,20 @@
             // 
             // textBox_abyss_uid
             // 
-            this.textBox_abyss_uid.Location = new System.Drawing.Point(65, 9);
-            this.textBox_abyss_uid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_abyss_uid.Location = new System.Drawing.Point(49, 7);
+            this.textBox_abyss_uid.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_abyss_uid.Name = "textBox_abyss_uid";
-            this.textBox_abyss_uid.Size = new System.Drawing.Size(100, 25);
+            this.textBox_abyss_uid.Size = new System.Drawing.Size(76, 21);
             this.textBox_abyss_uid.TabIndex = 5;
             this.textBox_abyss_uid.Text = "101879667";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(5, 12);
+            this.label7.Location = new System.Drawing.Point(4, 10);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 15);
+            this.label7.Size = new System.Drawing.Size(41, 12);
             this.label7.TabIndex = 4;
             this.label7.Text = "游戏id";
             // 
@@ -636,20 +638,20 @@
             this.tabPage6.Controls.Add(this.button_wish10);
             this.tabPage6.Controls.Add(this.button_wish1);
             this.tabPage6.Controls.Add(this.comboBox_wish_type);
-            this.tabPage6.Location = new System.Drawing.Point(4, 25);
-            this.tabPage6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1189, 661);
+            this.tabPage6.Size = new System.Drawing.Size(962, 577);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "抽卡模拟器";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
             // button_wish100
             // 
-            this.button_wish100.Location = new System.Drawing.Point(208, 68);
-            this.button_wish100.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button_wish100.Location = new System.Drawing.Point(156, 54);
+            this.button_wish100.Margin = new System.Windows.Forms.Padding(2);
             this.button_wish100.Name = "button_wish100";
-            this.button_wish100.Size = new System.Drawing.Size(85, 30);
+            this.button_wish100.Size = new System.Drawing.Size(64, 24);
             this.button_wish100.TabIndex = 12;
             this.button_wish100.Text = "100发";
             this.button_wish100.UseVisualStyleBackColor = true;
@@ -658,11 +660,11 @@
             // richTextBox_wish_stat
             // 
             this.richTextBox_wish_stat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox_wish_stat.Location = new System.Drawing.Point(523, 15);
-            this.richTextBox_wish_stat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.richTextBox_wish_stat.Location = new System.Drawing.Point(392, 12);
+            this.richTextBox_wish_stat.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox_wish_stat.Name = "richTextBox_wish_stat";
             this.richTextBox_wish_stat.ReadOnly = true;
-            this.richTextBox_wish_stat.Size = new System.Drawing.Size(291, 622);
+            this.richTextBox_wish_stat.Size = new System.Drawing.Size(219, 498);
             this.richTextBox_wish_stat.TabIndex = 11;
             this.richTextBox_wish_stat.Text = "";
             // 
@@ -680,11 +682,11 @@
             this.listView_wishbag.GridLines = true;
             this.listView_wishbag.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView_wishbag.HideSelection = false;
-            this.listView_wishbag.Location = new System.Drawing.Point(819, 15);
-            this.listView_wishbag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listView_wishbag.Location = new System.Drawing.Point(614, 12);
+            this.listView_wishbag.Margin = new System.Windows.Forms.Padding(2);
             this.listView_wishbag.MultiSelect = false;
             this.listView_wishbag.Name = "listView_wishbag";
-            this.listView_wishbag.Size = new System.Drawing.Size(359, 628);
+            this.listView_wishbag.Size = new System.Drawing.Size(270, 503);
             this.listView_wishbag.TabIndex = 10;
             this.listView_wishbag.UseCompatibleStateImageBehavior = false;
             this.listView_wishbag.View = System.Windows.Forms.View.Details;
@@ -710,10 +712,10 @@
             // 
             // button_wish_reset
             // 
-            this.button_wish_reset.Location = new System.Drawing.Point(381, 22);
-            this.button_wish_reset.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button_wish_reset.Location = new System.Drawing.Point(286, 18);
+            this.button_wish_reset.Margin = new System.Windows.Forms.Padding(2);
             this.button_wish_reset.Name = "button_wish_reset";
-            this.button_wish_reset.Size = new System.Drawing.Size(83, 78);
+            this.button_wish_reset.Size = new System.Drawing.Size(62, 62);
             this.button_wish_reset.TabIndex = 4;
             this.button_wish_reset.Text = "重置";
             this.button_wish_reset.UseVisualStyleBackColor = true;
@@ -722,18 +724,19 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(21, 22);
+            this.label8.Location = new System.Drawing.Point(16, 18);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 15);
+            this.label8.Size = new System.Drawing.Size(53, 12);
             this.label8.TabIndex = 3;
             this.label8.Text = "祈愿类型";
             // 
             // button_wish10
             // 
-            this.button_wish10.Location = new System.Drawing.Point(116, 68);
-            this.button_wish10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button_wish10.Location = new System.Drawing.Point(87, 54);
+            this.button_wish10.Margin = new System.Windows.Forms.Padding(2);
             this.button_wish10.Name = "button_wish10";
-            this.button_wish10.Size = new System.Drawing.Size(85, 30);
+            this.button_wish10.Size = new System.Drawing.Size(64, 24);
             this.button_wish10.TabIndex = 2;
             this.button_wish10.Text = "10发";
             this.button_wish10.UseVisualStyleBackColor = true;
@@ -741,10 +744,10 @@
             // 
             // button_wish1
             // 
-            this.button_wish1.Location = new System.Drawing.Point(24, 68);
-            this.button_wish1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button_wish1.Location = new System.Drawing.Point(18, 54);
+            this.button_wish1.Margin = new System.Windows.Forms.Padding(2);
             this.button_wish1.Name = "button_wish1";
-            this.button_wish1.Size = new System.Drawing.Size(85, 30);
+            this.button_wish1.Size = new System.Drawing.Size(64, 24);
             this.button_wish1.TabIndex = 1;
             this.button_wish1.Text = "1发";
             this.button_wish1.UseVisualStyleBackColor = true;
@@ -758,10 +761,10 @@
             "角色活动祈愿",
             "武器活动祈愿",
             "常驻祈愿"});
-            this.comboBox_wish_type.Location = new System.Drawing.Point(109, 20);
-            this.comboBox_wish_type.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox_wish_type.Location = new System.Drawing.Point(82, 16);
+            this.comboBox_wish_type.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox_wish_type.Name = "comboBox_wish_type";
-            this.comboBox_wish_type.Size = new System.Drawing.Size(177, 23);
+            this.comboBox_wish_type.Size = new System.Drawing.Size(134, 20);
             this.comboBox_wish_type.TabIndex = 0;
             // 
             // tabPage7
@@ -772,18 +775,20 @@
             this.tabPage7.Controls.Add(this.button_wishlog);
             this.tabPage7.Controls.Add(this.comboBox_wishlogtype);
             this.tabPage7.Controls.Add(this.label10);
-            this.tabPage7.Location = new System.Drawing.Point(4, 25);
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1189, 661);
+            this.tabPage7.Size = new System.Drawing.Size(962, 577);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "抽卡历史查询";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
             // button_wishloghelp
             // 
-            this.button_wishloghelp.Location = new System.Drawing.Point(331, 27);
+            this.button_wishloghelp.Location = new System.Drawing.Point(248, 22);
+            this.button_wishloghelp.Margin = new System.Windows.Forms.Padding(2);
             this.button_wishloghelp.Name = "button_wishloghelp";
-            this.button_wishloghelp.Size = new System.Drawing.Size(33, 34);
+            this.button_wishloghelp.Size = new System.Drawing.Size(25, 27);
             this.button_wishloghelp.TabIndex = 13;
             this.button_wishloghelp.Text = "？";
             this.button_wishloghelp.UseVisualStyleBackColor = true;
@@ -792,11 +797,11 @@
             // richTextBox_wishlog
             // 
             this.richTextBox_wishlog.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox_wishlog.Location = new System.Drawing.Point(603, 80);
-            this.richTextBox_wishlog.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.richTextBox_wishlog.Location = new System.Drawing.Point(452, 64);
+            this.richTextBox_wishlog.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox_wishlog.Name = "richTextBox_wishlog";
             this.richTextBox_wishlog.ReadOnly = true;
-            this.richTextBox_wishlog.Size = new System.Drawing.Size(543, 215);
+            this.richTextBox_wishlog.Size = new System.Drawing.Size(408, 173);
             this.richTextBox_wishlog.TabIndex = 12;
             this.richTextBox_wishlog.Text = "";
             // 
@@ -814,11 +819,11 @@
             this.listView_wishlog.GridLines = true;
             this.listView_wishlog.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView_wishlog.HideSelection = false;
-            this.listView_wishlog.Location = new System.Drawing.Point(26, 80);
-            this.listView_wishlog.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listView_wishlog.Location = new System.Drawing.Point(20, 64);
+            this.listView_wishlog.Margin = new System.Windows.Forms.Padding(2);
             this.listView_wishlog.MultiSelect = false;
             this.listView_wishlog.Name = "listView_wishlog";
-            this.listView_wishlog.Size = new System.Drawing.Size(571, 558);
+            this.listView_wishlog.Size = new System.Drawing.Size(429, 447);
             this.listView_wishlog.TabIndex = 10;
             this.listView_wishlog.UseCompatibleStateImageBehavior = false;
             this.listView_wishlog.View = System.Windows.Forms.View.Details;
@@ -843,9 +848,10 @@
             // 
             // button_wishlog
             // 
-            this.button_wishlog.Location = new System.Drawing.Point(240, 23);
+            this.button_wishlog.Location = new System.Drawing.Point(180, 18);
+            this.button_wishlog.Margin = new System.Windows.Forms.Padding(2);
             this.button_wishlog.Name = "button_wishlog";
-            this.button_wishlog.Size = new System.Drawing.Size(85, 42);
+            this.button_wishlog.Size = new System.Drawing.Size(64, 34);
             this.button_wishlog.TabIndex = 2;
             this.button_wishlog.Text = "查询";
             this.button_wishlog.UseVisualStyleBackColor = true;
@@ -855,17 +861,19 @@
             // 
             this.comboBox_wishlogtype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_wishlogtype.FormattingEnabled = true;
-            this.comboBox_wishlogtype.Location = new System.Drawing.Point(66, 34);
+            this.comboBox_wishlogtype.Location = new System.Drawing.Point(50, 27);
+            this.comboBox_wishlogtype.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox_wishlogtype.Name = "comboBox_wishlogtype";
-            this.comboBox_wishlogtype.Size = new System.Drawing.Size(168, 23);
+            this.comboBox_wishlogtype.Size = new System.Drawing.Size(127, 20);
             this.comboBox_wishlogtype.TabIndex = 1;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(23, 37);
+            this.label10.Location = new System.Drawing.Point(17, 30);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(37, 15);
+            this.label10.Size = new System.Drawing.Size(29, 12);
             this.label10.TabIndex = 0;
             this.label10.Text = "类型";
             // 
@@ -884,11 +892,11 @@
             this.tabPage1.Controls.Add(this.textBox_sywscore1);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.comboBox_sywscore1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(1189, 661);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage1.Size = new System.Drawing.Size(962, 577);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "圣遗物副属性评分";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -896,20 +904,20 @@
             // richTextBox_sywscore
             // 
             this.richTextBox_sywscore.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox_sywscore.Location = new System.Drawing.Point(30, 191);
-            this.richTextBox_sywscore.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.richTextBox_sywscore.Location = new System.Drawing.Point(22, 153);
+            this.richTextBox_sywscore.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox_sywscore.Name = "richTextBox_sywscore";
             this.richTextBox_sywscore.ReadOnly = true;
-            this.richTextBox_sywscore.Size = new System.Drawing.Size(720, 221);
+            this.richTextBox_sywscore.Size = new System.Drawing.Size(541, 178);
             this.richTextBox_sywscore.TabIndex = 16;
             this.richTextBox_sywscore.Text = "";
             // 
             // textBox_sywscore4
             // 
-            this.textBox_sywscore4.Location = new System.Drawing.Point(261, 141);
-            this.textBox_sywscore4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_sywscore4.Location = new System.Drawing.Point(196, 113);
+            this.textBox_sywscore4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_sywscore4.Name = "textBox_sywscore4";
-            this.textBox_sywscore4.Size = new System.Drawing.Size(45, 25);
+            this.textBox_sywscore4.Size = new System.Drawing.Size(35, 21);
             this.textBox_sywscore4.TabIndex = 11;
             this.textBox_sywscore4.Text = "40";
             this.textBox_sywscore4.TextChanged += new System.EventHandler(this.updateSywScore);
@@ -917,9 +925,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 151);
+            this.label4.Location = new System.Drawing.Point(20, 121);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 15);
+            this.label4.Size = new System.Drawing.Size(35, 12);
             this.label4.TabIndex = 10;
             this.label4.Text = "词条4";
             // 
@@ -927,19 +936,19 @@
             // 
             this.comboBox_sywscore4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_sywscore4.FormattingEnabled = true;
-            this.comboBox_sywscore4.Location = new System.Drawing.Point(87, 142);
-            this.comboBox_sywscore4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox_sywscore4.Location = new System.Drawing.Point(65, 114);
+            this.comboBox_sywscore4.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox_sywscore4.Name = "comboBox_sywscore4";
-            this.comboBox_sywscore4.Size = new System.Drawing.Size(149, 23);
+            this.comboBox_sywscore4.Size = new System.Drawing.Size(113, 20);
             this.comboBox_sywscore4.TabIndex = 9;
             this.comboBox_sywscore4.TextChanged += new System.EventHandler(this.updateSywScore);
             // 
             // textBox_sywscore3
             // 
-            this.textBox_sywscore3.Location = new System.Drawing.Point(261, 102);
-            this.textBox_sywscore3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_sywscore3.Location = new System.Drawing.Point(196, 82);
+            this.textBox_sywscore3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_sywscore3.Name = "textBox_sywscore3";
-            this.textBox_sywscore3.Size = new System.Drawing.Size(45, 25);
+            this.textBox_sywscore3.Size = new System.Drawing.Size(35, 21);
             this.textBox_sywscore3.TabIndex = 8;
             this.textBox_sywscore3.Text = "19";
             this.textBox_sywscore3.TextChanged += new System.EventHandler(this.updateSywScore);
@@ -947,9 +956,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 112);
+            this.label3.Location = new System.Drawing.Point(20, 90);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 15);
+            this.label3.Size = new System.Drawing.Size(35, 12);
             this.label3.TabIndex = 7;
             this.label3.Text = "词条3";
             // 
@@ -957,19 +967,19 @@
             // 
             this.comboBox_sywscore3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_sywscore3.FormattingEnabled = true;
-            this.comboBox_sywscore3.Location = new System.Drawing.Point(87, 104);
-            this.comboBox_sywscore3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox_sywscore3.Location = new System.Drawing.Point(65, 83);
+            this.comboBox_sywscore3.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox_sywscore3.Name = "comboBox_sywscore3";
-            this.comboBox_sywscore3.Size = new System.Drawing.Size(149, 23);
+            this.comboBox_sywscore3.Size = new System.Drawing.Size(113, 20);
             this.comboBox_sywscore3.TabIndex = 6;
             this.comboBox_sywscore3.TextChanged += new System.EventHandler(this.updateSywScore);
             // 
             // textBox_sywscore2
             // 
-            this.textBox_sywscore2.Location = new System.Drawing.Point(261, 62);
-            this.textBox_sywscore2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_sywscore2.Location = new System.Drawing.Point(196, 50);
+            this.textBox_sywscore2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_sywscore2.Name = "textBox_sywscore2";
-            this.textBox_sywscore2.Size = new System.Drawing.Size(45, 25);
+            this.textBox_sywscore2.Size = new System.Drawing.Size(35, 21);
             this.textBox_sywscore2.TabIndex = 5;
             this.textBox_sywscore2.Text = "5.3";
             this.textBox_sywscore2.TextChanged += new System.EventHandler(this.updateSywScore);
@@ -977,9 +987,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 72);
+            this.label2.Location = new System.Drawing.Point(20, 58);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 15);
+            this.label2.Size = new System.Drawing.Size(35, 12);
             this.label2.TabIndex = 4;
             this.label2.Text = "词条2";
             // 
@@ -987,19 +998,19 @@
             // 
             this.comboBox_sywscore2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_sywscore2.FormattingEnabled = true;
-            this.comboBox_sywscore2.Location = new System.Drawing.Point(87, 64);
-            this.comboBox_sywscore2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox_sywscore2.Location = new System.Drawing.Point(65, 51);
+            this.comboBox_sywscore2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox_sywscore2.Name = "comboBox_sywscore2";
-            this.comboBox_sywscore2.Size = new System.Drawing.Size(149, 23);
+            this.comboBox_sywscore2.Size = new System.Drawing.Size(113, 20);
             this.comboBox_sywscore2.TabIndex = 3;
             this.comboBox_sywscore2.TextChanged += new System.EventHandler(this.updateSywScore);
             // 
             // textBox_sywscore1
             // 
-            this.textBox_sywscore1.Location = new System.Drawing.Point(261, 24);
-            this.textBox_sywscore1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_sywscore1.Location = new System.Drawing.Point(196, 19);
+            this.textBox_sywscore1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_sywscore1.Name = "textBox_sywscore1";
-            this.textBox_sywscore1.Size = new System.Drawing.Size(45, 25);
+            this.textBox_sywscore1.Size = new System.Drawing.Size(35, 21);
             this.textBox_sywscore1.TabIndex = 2;
             this.textBox_sywscore1.Text = "25.7";
             this.textBox_sywscore1.TextChanged += new System.EventHandler(this.updateSywScore);
@@ -1007,9 +1018,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 34);
+            this.label1.Location = new System.Drawing.Point(20, 27);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 15);
+            this.label1.Size = new System.Drawing.Size(35, 12);
             this.label1.TabIndex = 1;
             this.label1.Text = "词条1";
             // 
@@ -1017,29 +1029,30 @@
             // 
             this.comboBox_sywscore1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_sywscore1.FormattingEnabled = true;
-            this.comboBox_sywscore1.Location = new System.Drawing.Point(87, 26);
-            this.comboBox_sywscore1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox_sywscore1.Location = new System.Drawing.Point(65, 21);
+            this.comboBox_sywscore1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox_sywscore1.Name = "comboBox_sywscore1";
-            this.comboBox_sywscore1.Size = new System.Drawing.Size(149, 23);
+            this.comboBox_sywscore1.Size = new System.Drawing.Size(113, 20);
             this.comboBox_sywscore1.TabIndex = 0;
             this.comboBox_sywscore1.TextChanged += new System.EventHandler(this.updateSywScore);
             // 
             // tabPage8
             // 
-            this.tabPage8.Location = new System.Drawing.Point(4, 25);
+            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(1189, 661);
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage8.Size = new System.Drawing.Size(962, 577);
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "素材日历(ing)";
             this.tabPage8.UseVisualStyleBackColor = true;
             // 
             // tabPage5
             // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 25);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1189, 661);
+            this.tabPage5.Size = new System.Drawing.Size(962, 577);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "消耗计算器(ing)";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1051,11 +1064,11 @@
             this.tabPage3.Controls.Add(this.label9);
             this.tabPage3.Controls.Add(this.textBox_cookie);
             this.tabPage3.Controls.Add(this.label6);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage3.Size = new System.Drawing.Size(1189, 661);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage3.Size = new System.Drawing.Size(962, 577);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "配置cookie等";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1063,46 +1076,49 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(93, 315);
+            this.label11.Location = new System.Drawing.Point(70, 252);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(398, 15);
+            this.label11.Size = new System.Drawing.Size(311, 12);
             this.label11.TabIndex = 4;
             this.label11.Text = "注:cookie一般不会过期，auth key过期时间12小时左右；";
             // 
             // textBox_authkey
             // 
-            this.textBox_authkey.Location = new System.Drawing.Point(93, 59);
-            this.textBox_authkey.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_authkey.Location = new System.Drawing.Point(70, 47);
+            this.textBox_authkey.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_authkey.Multiline = true;
             this.textBox_authkey.Name = "textBox_authkey";
             this.textBox_authkey.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_authkey.Size = new System.Drawing.Size(1071, 241);
+            this.textBox_authkey.Size = new System.Drawing.Size(804, 194);
             this.textBox_authkey.TabIndex = 3;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(16, 95);
+            this.label9.Location = new System.Drawing.Point(12, 76);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(71, 15);
+            this.label9.Size = new System.Drawing.Size(53, 12);
             this.label9.TabIndex = 2;
             this.label9.Text = "auth_key";
             // 
             // textBox_cookie
             // 
-            this.textBox_cookie.Location = new System.Drawing.Point(93, 16);
-            this.textBox_cookie.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_cookie.Location = new System.Drawing.Point(70, 13);
+            this.textBox_cookie.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_cookie.Name = "textBox_cookie";
-            this.textBox_cookie.Size = new System.Drawing.Size(1071, 25);
+            this.textBox_cookie.Size = new System.Drawing.Size(804, 21);
             this.textBox_cookie.TabIndex = 1;
             this.textBox_cookie.TextChanged += new System.EventHandler(this.textBox_cookie_TextChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 19);
+            this.label6.Location = new System.Drawing.Point(12, 15);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 15);
+            this.label6.Size = new System.Drawing.Size(41, 12);
             this.label6.TabIndex = 0;
             this.label6.Text = "Cookie";
             // 
@@ -1111,28 +1127,28 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 696);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 606);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1197, 25);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(970, 22);
             this.statusStrip1.TabIndex = 21;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(167, 20);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(131, 17);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1197, 721);
+            this.ClientSize = new System.Drawing.Size(970, 628);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

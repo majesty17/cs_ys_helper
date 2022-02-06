@@ -22,18 +22,14 @@ namespace cs_ys_helper
         public static JsonData getUserInfo(string uid,string cookie)
         {
 
-
-//JsonData jd = JsonMapper.ToObject(content);
-
-            string url = "https://api-takumi.mihoyo.com/game_record/genshin/api/index?server=" + getServer(uid) + "&role_id=" + uid;
+            string url = "https://api-takumi-record.mihoyo.com/game_record/app/genshin/api/index?server=" + getServer(uid) + "&role_id=" + uid;
 
             Console.WriteLine(url);
 
-
             HttpWebRequest myRequest = (HttpWebRequest)WebRequest.Create(url);
 
-            myRequest.Headers.Add("cookie", cookie);// Data.COOKIE);
-            myRequest.Headers.Add("DS", getDS());
+            myRequest.Headers.Add("cookie", cookie);
+            myRequest.Headers.Add("DS", getDS("role_id=" + uid + "&server=" + getServer(uid)));
             myRequest.Headers.Add("Origin", "https://webstatic.mihoyo.com");
             myRequest.Headers.Add("x-rpc-app_version", Data.VERSION);
             myRequest.Headers.Add("x-rpc-client_type", Data.CLIENT_TYPE);
@@ -41,7 +37,7 @@ namespace cs_ys_helper
             myRequest.Headers.Add("Accept-Language", "zh-CN,en-US;q=0.8");
             myRequest.Headers.Add("X-Requested-With", "com.mihoyo.hyperion");
 
-            myRequest.UserAgent = "Mozilla/5.0 (Linux; Android 9; Unspecified Device) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/39.0.0.0 Mobile Safari/537.36 miHoYoBBS/2.2.0";
+            myRequest.UserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) miHoYoBBS/" + Data.VERSION;
             myRequest.Referer = "https://webstatic.mihoyo.com/app/community-game-records/index.html?v=6";
             myRequest.Accept = "application/json, text/plain, */*";
 
@@ -65,20 +61,15 @@ namespace cs_ys_helper
         //获取深渊
         public static JsonData getUserAbyss(string uid, string cookie)
         {
-
-
-            //JsonData jd = JsonMapper.ToObject(content);
-
-            string url = "https://api-takumi.mihoyo.com/game_record/genshin/api/spiralAbyss?server=" + getServer(uid) + "&role_id=" + uid + "&schedule_type=1";
-            // + getServer(uid) + "&role_id=" + uid;
-
+            
+            string url = "https://api-takumi-record.mihoyo.com/game_record/app/genshin/api/spiralAbyss?server=" + getServer(uid) + "&role_id=" + uid + "&schedule_type=1";
             Console.WriteLine(url);
 
 
             HttpWebRequest myRequest = (HttpWebRequest)WebRequest.Create(url);
 
-            myRequest.Headers.Add("cookie", cookie);// Data.COOKIE);
-            myRequest.Headers.Add("DS", getDS());
+            myRequest.Headers.Add("cookie", cookie);
+            myRequest.Headers.Add("DS", getDS("role_id=" + uid + "&schedule_type=1&server=" + getServer(uid)));
             myRequest.Headers.Add("Origin", "https://webstatic.mihoyo.com");
             myRequest.Headers.Add("x-rpc-app_version", Data.VERSION);
             myRequest.Headers.Add("x-rpc-client_type", Data.CLIENT_TYPE);
@@ -86,7 +77,7 @@ namespace cs_ys_helper
             myRequest.Headers.Add("Accept-Language", "zh-CN,en-US;q=0.8");
             myRequest.Headers.Add("X-Requested-With", "com.mihoyo.hyperion");
 
-            myRequest.UserAgent = "Mozilla/5.0 (Linux; Android 9; Unspecified Device) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/39.0.0.0 Mobile Safari/537.36 miHoYoBBS/2.2.0";
+            myRequest.UserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) miHoYoBBS/" + Data.VERSION;
             myRequest.Referer = "https://webstatic.mihoyo.com/app/community-game-records/index.html?v=6";
             myRequest.Accept = "application/json, text/plain, */*";
 
@@ -108,17 +99,12 @@ namespace cs_ys_helper
 
 
         //获取详细角色信息
-        public static JsonData getRoleDetails(string uid,string[] character_ids,string cookie)
+        public static JsonData getRoleDetails(string uid,string character_id,string cookie)
         {
-            string url = "https://api-takumi.mihoyo.com/game_record/genshin/api/character";
+            string url = "https://api-takumi.mihoyo.com/game_record/app/genshin/api/character";
             string server = getServer(uid);
 
-            string content = "{\"character_ids\":[" + character_ids[0];
-            for(int i = 1; i < character_ids.Length; i++)
-            {
-                content = content + "," + character_ids[i];
-            }
-            content = content + "],\"role_id\":\"" + uid + "\",\"server\":\"" + server + "\"}";
+            string content = "{\"character_ids\":[" + character_id + "],\"role_id\":\"" + uid + "\",\"server\":\"" + server + "\"}";
             byte[] bs = Encoding.UTF8.GetBytes(content);
             Console.WriteLine(url);
             Console.WriteLine(content);
@@ -126,7 +112,8 @@ namespace cs_ys_helper
             HttpWebRequest myRequest = (HttpWebRequest)WebRequest.Create(url);
 
             myRequest.Headers.Add("cookie", cookie);
-            myRequest.Headers.Add("DS", getDS());
+            //myRequest.Headers.Add("DS", getDS("character_ids=[" + character_id + "]&role_id=" + uid + "&server=" + getServer(uid)));
+            myRequest.Headers.Add("DS", getDS_new(content));
             myRequest.Headers.Add("Origin", "https://webstatic.mihoyo.com");
             myRequest.Headers.Add("x-rpc-app_version", Data.VERSION);
             myRequest.Headers.Add("x-rpc-client_type", Data.CLIENT_TYPE);
@@ -134,7 +121,7 @@ namespace cs_ys_helper
             myRequest.Headers.Add("Accept-Language", "zh-CN,en-US;q=0.8");
             myRequest.Headers.Add("X-Requested-With", "com.mihoyo.hyperion");
 
-            myRequest.UserAgent = "Mozilla/5.0 (Linux; Android 9; Unspecified Device) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/39.0.0.0 Mobile Safari/537.36 miHoYoBBS/2.2.0";
+            myRequest.UserAgent = "Mozilla/5.0 (Linux; Android 9; Unspecified Device) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/39.0.0.0 Mobile Safari/537.36 miHoYoBBS/2.11.1";
             myRequest.Referer = "https://webstatic.mihoyo.com/app/community-game-records/index.html?v=6";
             myRequest.Accept = "application/json, text/plain, */*";
             myRequest.ContentType = "application/json;charset=UTF-8";
@@ -234,26 +221,25 @@ namespace cs_ys_helper
             return "";
         }
         //获取签名
-        private static string getDS()
+        private static string getDS(string str)
         {
             string n = Data.SALT;
- /*           if (Data.VERSION == "2.1.0")
-            {
-                n = md5(Data.VERSION);
-            }else if (Data.VERSION == "2.2.1")
-            {
-                n = "14bmu1mz0yuljprsfgpvjh3ju2ni468r";
-            }
-            else
-            {
-                Data.VERSION = "2.2.1";
-                n = "14bmu1mz0yuljprsfgpvjh3ju2ni468r";
-            }*/
             TimeSpan ts = DateTime.Now - new DateTime(1970, 1, 1, 0, 0, 0, 0);
             string i = Convert.ToInt64(ts.TotalSeconds - 28800).ToString();
-            Console.WriteLine(i);
+            Console.WriteLine(str);
             string r = getRandomStr(6);
-            string c = md5("salt=" + n + "&t=" + i + "&r=" + r);
+            string c = md5("salt=" + n + "&t=" + i + "&r=" + r + "&b=&q=" + str);
+            return i + "," + r + "," + c;
+        }
+        //获取签名 for get character
+        private static string getDS_new(string str)
+        {
+            string n = Data.SALT;
+            TimeSpan ts = DateTime.Now - new DateTime(1970, 1, 1, 0, 0, 0, 0);
+            string i = Convert.ToInt64(ts.TotalSeconds - 28800).ToString();
+            Console.WriteLine(str);
+            string r = getRandomStr(6);
+            string c = md5("salt=" + n + "&t=" + i + "&r=" + r + "&b=" + str + "&q=");
             return i + "," + r + "," + c;
         }
         //计算md5

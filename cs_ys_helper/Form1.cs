@@ -157,16 +157,22 @@ namespace cs_ys_helper
                 richTextBox_userinfo.Clear();
                 richTextBox_userinfo.AppendText("活跃天数\t" + stats["active_day_number"] + "\n");
                 richTextBox_userinfo.AppendText("成就达成数\t" + stats["achievement_number"] + "\n");
-                richTextBox_userinfo.AppendText("风神瞳数\t" + stats["anemoculus_number"] + "\n");
-                richTextBox_userinfo.AppendText("岩神瞳数\t" + stats["geoculus_number"] + "\n");
                 richTextBox_userinfo.AppendText("获得角色数\t" + stats["avatar_number"] + "\n");
                 richTextBox_userinfo.AppendText("解锁传送点\t" + stats["way_point_number"] + "\n");
+
+                richTextBox_userinfo.AppendText("风神瞳数\t" + stats["anemoculus_number"] + "\n");
+                richTextBox_userinfo.AppendText("岩神瞳数\t" + stats["geoculus_number"] + "\n");
+                richTextBox_userinfo.AppendText("雷神瞳数\t" + stats["electroculus_number"] + "\n");
+
+
                 richTextBox_userinfo.AppendText("解锁秘境\t" + stats["domain_number"] + "\n");
                 richTextBox_userinfo.AppendText("深境螺旋\t" + stats["spiral_abyss"] + "\n");
+
                 richTextBox_userinfo.AppendText("华丽宝箱数\t" + stats["luxurious_chest_number"] + "\n");
                 richTextBox_userinfo.AppendText("珍贵宝箱数\t" + stats["precious_chest_number"] + "\n");
                 richTextBox_userinfo.AppendText("精致宝箱数\t" + stats["exquisite_chest_number"] + "\n");
-                richTextBox_userinfo.AppendText("普通宝箱数\t" + stats["common_chest_number"]);
+                richTextBox_userinfo.AppendText("普通宝箱数\t" + stats["common_chest_number"] + "\n");
+                richTextBox_userinfo.AppendText("奇馈宝箱数\t" + stats["magic_chest_number"]);
 
                 //城市
                 richTextBox_usercity.Clear();
@@ -202,12 +208,13 @@ namespace cs_ys_helper
             if (listView_rolelist.SelectedItems.Count > 0)
             {
                 ListViewItem lvi_old = listView_rolelist.SelectedItems[0];
-                Console.WriteLine(lvi_old.Tag.ToString());
-                JsonData role_details = Utils.getRoleDetails(uid, new string[] { lvi_old.Tag.ToString() }, cookie);
+                int lvi_idx = listView_rolelist.SelectedIndices[0];
+                Console.WriteLine("当前选中角色id:" + lvi_old.Tag.ToString());
+                JsonData role_details = Utils.getRoleDetails(uid, lvi_old.Tag.ToString(), cookie);
                 if (role_details["message"].ToString() == "OK")
                 {
-                    JsonData role = role_details["data"]["avatars"][0];
-                    Console.WriteLine(role["name"].ToString());
+                    JsonData role = role_details["data"]["avatars"][lvi_idx];
+                    Console.WriteLine("角色名" + role["name"].ToString());
                     string icon = role["icon"].ToString();
                     pictureBox_roledetails.Load(icon);
 
@@ -243,7 +250,7 @@ namespace cs_ys_helper
                     {
                         ListViewItem lvi_li = new ListViewItem(li["pos"].ToString());
                         lvi_li.SubItems.Add(li["name"].ToString());
-                        Console.WriteLine(li["is_actived"].ToString());
+                        //Console.WriteLine(li["is_actived"].ToString());
                         if (li["is_actived"].ToString() == "True")
                         {
                             lvi_li.UseItemStyleForSubItems = false;
